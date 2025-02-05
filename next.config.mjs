@@ -22,7 +22,7 @@ const nextConfig = {
     parallelServerCompiles: true,
   },
   basePath: '',
-  assetPrefix: './',
+  assetPrefix: '',
   trailingSlash: true,
 }
 
