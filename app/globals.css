@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 214, 219, 220;
+  --foreground: 0, 0, 0;
+  --primary: 234, 179, 8;
+  --secondary: 30, 41, 59;
+}
+
+.dark {
+  --background: 30, 41, 59;
+  --foreground: 255, 255, 255;
+  --primary: 234, 179, 8;
+  --secondary: 214, 219, 220;
+}
+
+body {
+  color: rgb(var(--foreground));
+  background: rgb(var(--background));
+}
+
