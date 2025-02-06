@@ -8,12 +8,17 @@ const projects = [
     url: "https://github.com/nduboi/MyRPG"
   },
   { id: 2,
+    title: "42sh",
+    description: "A shell with C for linux",
+    url: "https://github.com/nduboi/42sh"
+  },
+  { id: 3,
     title: "True or Dare",
     description: "A full true of dare for party online",
     url: "https://github.com/nduboi/Action-ou-verite"
   },
   {
-    id: 3,
+    id: 4,
     title: "Multichat",
     description: "A project who manipulate socket and other protocols RTMP ...",
     url: "https://github.com/nduboi/Multichat",
