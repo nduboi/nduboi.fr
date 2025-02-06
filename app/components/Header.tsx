@@ -8,13 +8,26 @@ export default function Header() {
   const [isOpen, setIsOpen] = useState(false)
   const { theme, setTheme } = useTheme()
   const [scrolled, setScrolled] = useState(false)
+  const [systemTheme, setSystemTheme] = useState<"light" | "dark">("light")
 
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20)
     }
     window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
+
+    // Detect system theme
+    const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)")
+    setSystemTheme(mediaQuery.matches ? "dark" : "light")
+    const handleThemeChange = (e: MediaQueryListEvent) => {
+      setSystemTheme(e.matches ? "dark" : "light")
+    }
+    mediaQuery.addListener(handleThemeChange)
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll)
+      mediaQuery.removeListener(handleThemeChange)
+    }
   }, [])
 
   return (
@@ -49,18 +62,24 @@ export default function Header() {
               </motion.a>
             ))}
             <motion.button
-              onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+              onClick={() =>
+                setTheme(theme === "dark" || (theme === "system" && systemTheme === "dark") ? "light" : "dark")
+              }
               className="text-gray-800 dark:text-gray-200 hover:text-yellow-500 dark:hover:text-yellow-500 transition-colors"
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
             >
-              {theme === "dark" ? <FaSun size={20} /> : <FaMoon size={20} />}
+              {theme === "dark" || (theme === "system" && systemTheme === "dark") ? (
+                <FaSun size={20} />
+              ) : (
+                <FaMoon size={20} />
+              )}
             </motion.button>
           </div>
           <div className="md:hidden flex items-center">
             <motion.button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-gray-800 dark:text-gray-200 hover:text-yellow-500 dark:hover:text-yellow-500 transition-colors"
+              className="text-gray-800 dark:text-gray-200 hover:text-yellow-500 dark:hover:text-yellow-500 transition-colors p-2"
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -72,10 +91,7 @@ export default function Header() {
                     d="M18.278 16.864a1 1 0 0 1-1.414 1.414l-4.829-4.828-4.828 4.828a1 1 0 0 1-1.414-1.414l4.828-4.829-4.828-4.828a1 1 0 0 1 1.414-1.414l4.829 4.828 4.828-4.828a1 1 0 1 1 1.414 1.414l-4.828 4.829 4.828 4.828z"
                   />
                 ) : (
-                  <path
-                    fillRule="evenodd"
-                    d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"
-                  />
+                  <path fillRule="evenodd" d="M4 6h16v2H4V6zm0 5h16v2H4v-2zm0 5h16v2H4v-2z" />
                 )}
               </svg>
             </motion.button>
@@ -87,7 +103,7 @@ export default function Header() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.3 }}
-            className="md:hidden mt-4 space-y-2"
+            className="md:hidden mt-4 space-y-2 bg-white dark:bg-gray-800 p-4 rounded-lg shadow-lg"
           >
             {["About", "Projects", "Contact"].map((item) => (
               <motion.a
@@ -101,12 +117,16 @@ export default function Header() {
               </motion.a>
             ))}
             <motion.button
-              onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+              onClick={() =>
+                setTheme(theme === "dark" || (theme === "system" && systemTheme === "dark") ? "light" : "dark")
+              }
               className="block w-full text-left text-gray-800 dark:text-gray-200 hover:text-yellow-500 dark:hover:text-yellow-500 transition-colors"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              {theme === "dark" ? "Switch to Light Mode" : "Switch to Dark Mode"}
+              {theme === "dark" || (theme === "system" && systemTheme === "dark")
+                ? "Switch to Light Mode"
+                : "Switch to Dark Mode"}
             </motion.button>
           </motion.div>
         )}
