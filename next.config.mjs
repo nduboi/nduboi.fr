@@ -24,6 +24,15 @@ const nextConfig = {
   basePath: '',
   assetPrefix: '',
   trailingSlash: true,
+  async redirects() {
+    return [
+      {
+        source: '/sitemap.xml',
+        destination: '/api/sitemap.xml', // Redirect to the API route serving the sitemap
+        permanent: true,
+      },
+    ];
+  },
 }
 
 mergeConfig(nextConfig, userConfig)
