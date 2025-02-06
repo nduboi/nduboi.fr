@@ -38,6 +38,30 @@ export default function RootLayout({
             }
           `}
         </style>
+        <link rel="icon" type="image/png" sizes="32x32" href="https://nduboi.fr/build/img/favicon-32x32.png"/>
+        <link rel="icon" type="image/png" sizes="16x16" href="https://nduboi.fr/build/img/favicon-16x16.png"/>
+        <link rel="apple-touch-icon" sizes="180x180" href="https://nduboi.fr/build/img/apple-touch-icon.png"/>
+        <link rel="icon" type="image/png" sizes="192x192" href="https://nduboi.fr/build/img/android-chrome-192x192.png"/>
+        <link rel="icon" type="image/png" sizes="512x512" href="https://nduboi.fr/build/img/android-chrome-512x512.png"/>
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+        {`
+          {
+              "@context": "https://schema.org",
+              "@type": "Person",
+              "name": "Noa Roussiere",
+              "alternateName": "Nduboi",
+              "url": "https://modern.nduboi.fr",
+              "jobTitle": "Développeur",
+              "alumniOf": "Epitech",
+              "sameAs": [
+                  "https://github.com/nduboi",
+                  "https://www.instagram.com/nduboiii",
+                  "https://x.com/Nduboi_twitch",
+                  "https://www.linkedin.com/in/noa-roussiere-0613052a1"
+              ]
+          }
+          `
+        }
       </header>
       <body className={inter.className}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
