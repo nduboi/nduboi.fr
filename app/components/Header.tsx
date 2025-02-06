@@ -1,5 +1,5 @@
 "use client"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { motion } from "framer-motion"
 import { useTheme } from "next-themes"
 import { FaSun, FaMoon } from "react-icons/fa"
@@ -7,43 +7,62 @@ import { FaSun, FaMoon } from "react-icons/fa"
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false)
   const { theme, setTheme } = useTheme()
+  const [scrolled, setScrolled] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20)
+    }
+    window.addEventListener("scroll", handleScroll)
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
 
   return (
-    <header className="bg-gray-200 dark:bg-gray-800 shadow-md">
-      <nav className="container mx-auto px-6 py-3">
+    <motion.header
+      className={`fixed w-full z-50 transition-all duration-300 ${
+        scrolled ? "bg-white dark:bg-gray-900 shadow-lg" : "bg-transparent"
+      }`}
+      initial={{ y: -100 }}
+      animate={{ y: 0 }}
+      transition={{ duration: 0.5 }}
+    >
+      <nav className="container mx-auto px-6 py-4">
         <div className="flex justify-between items-center">
-          <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }}>
-            <a href="#" className="text-xl font-bold text-gray-800 dark:text-gray-200">
+          <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+            <a
+              href="#"
+              className="text-2xl font-bold text-gray-800 dark:text-gray-200 hover:text-yellow-500 dark:hover:text-yellow-500 transition-colors"
+            >
               Nduboi
             </a>
           </motion.div>
-          <div className="hidden md:flex space-x-4">
-            <a href="#about" className="text-gray-800 dark:text-gray-200 hover:text-yellow-500 dark:hover:text-yellow-500">
-              About
-            </a>
-            <a href="#projects" className="text-gray-800 dark:text-gray-200 hover:text-yellow-500 dark:hover:text-yellow-500">
-              Projects
-            </a>
-            <a href="#contact" className="text-gray-800 dark:text-gray-200 hover:text-yellow-500 dark:hover:text-yellow-500">
-              Contact
-            </a>
-            <button
+          <div className="hidden md:flex space-x-6">
+            {["About", "Projects", "Contact"].map((item) => (
+              <motion.a
+                key={item}
+                href={`#${item.toLowerCase()}`}
+                className="text-gray-800 dark:text-gray-200 hover:text-yellow-500 dark:hover:text-yellow-500 transition-colors"
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                {item}
+              </motion.a>
+            ))}
+            <motion.button
               onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-              className="text-gray-800 dark:text-gray-200 hover:text-yellow-500 dark:hover:text-yellow-500"
+              className="text-gray-800 dark:text-gray-200 hover:text-yellow-500 dark:hover:text-yellow-500 transition-colors"
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.95 }}
             >
-              {theme === "dark" ? <FaSun /> : <FaMoon />}
-            </button>
+              {theme === "dark" ? <FaSun size={20} /> : <FaMoon size={20} />}
+            </motion.button>
           </div>
           <div className="md:hidden flex items-center">
-            <button
-              onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-              className="text-gray-800 dark:text-gray-200 hover:text-yellow-500 dark:hover:text-yellow-500 mr-4"
-            >
-              {theme === "dark" ? <FaSun /> : <FaMoon />}
-            </button>
-            <button
+            <motion.button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-gray-800 dark:text-gray-200 hover:text-yellow-500 dark:hover:text-yellow-500"
+              className="text-gray-800 dark:text-gray-200 hover:text-yellow-500 dark:hover:text-yellow-500 transition-colors"
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.95 }}
             >
               <svg className="h-6 w-6 fill-current" viewBox="0 0 24 24">
                 {isOpen ? (
@@ -59,28 +78,39 @@ export default function Header() {
                   />
                 )}
               </svg>
-            </button>
+            </motion.button>
           </div>
         </div>
         {isOpen && (
           <motion.div
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.3 }}
             className="md:hidden mt-4 space-y-2"
           >
-            <a href="#about" className="block text-gray-800 dark:text-gray-200 hover:text-yellow-500 dark:hover:text-yellow-500">
-              About
-            </a>
-            <a href="#projects" className="block text-gray-800 dark:text-gray-200 hover:text-yellow-500 dark:hover:text-yellow-500">
-              Projects
-            </a>
-            <a href="#contact" className="block text-gray-800 dark:text-gray-200 hover:text-yellow-500 dark:hover:text-yellow-500">
-              Contact
-            </a>
+            {["About", "Projects", "Contact"].map((item) => (
+              <motion.a
+                key={item}
+                href={`#${item.toLowerCase()}`}
+                className="block text-gray-800 dark:text-gray-200 hover:text-yellow-500 dark:hover:text-yellow-500 transition-colors"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                {item}
+              </motion.a>
+            ))}
+            <motion.button
+              onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+              className="block w-full text-left text-gray-800 dark:text-gray-200 hover:text-yellow-500 dark:hover:text-yellow-500 transition-colors"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              {theme === "dark" ? "Switch to Light Mode" : "Switch to Dark Mode"}
+            </motion.button>
           </motion.div>
         )}
       </nav>
-    </header>
+    </motion.header>
   )
 }
