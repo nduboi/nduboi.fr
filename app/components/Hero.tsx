@@ -54,7 +54,7 @@ export default function Hero() {
             className="relative rounded-full overflow-hidden border-4 border-yellow-500 shadow-lg"
           >
             <Image
-              src="https://nduboi.fr/build/img/nduboi_picture.JPEG"
+              src="build/img/nduboi_picture.JPEG"
               alt="Nduboi"
               width={400}
               height={400}
