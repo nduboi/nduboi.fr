@@ -2,13 +2,21 @@
 import { motion } from "framer-motion"
 
 const projects = [
-  { id: 1, title: "True or Dare", description: "A full true of dare for party online", url: "https://av.nduboi.fr" },
-  { id: 2, title: "MyRPG", description: "A complete RPG game with CSFML for linux", url: "https://github.com/nduboi" },
+  { id: 1,
+    title: "MyRPG",
+    description: "A complete RPG game with CSFML for linux",
+    url: "https://github.com/nduboi/MyRPG"
+  },
+  { id: 2,
+    title: "True or Dare",
+    description: "A full true of dare for party online",
+    url: "https://github.com/nduboi/Action-ou-verite"
+  },
   {
     id: 3,
     title: "Multichat",
     description: "A project who manipulate socket and other protocols RTMP ...",
-    url: "https://github.com/nduboi",
+    url: "https://github.com/nduboi/Multichat",
   },
 ]
 
