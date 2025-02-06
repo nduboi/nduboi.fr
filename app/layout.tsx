@@ -44,6 +44,7 @@ export default function RootLayout({
         <link rel="icon" type="image/png" sizes="192x192" href="https://nduboi.fr/build/img/android-chrome-192x192.png"/>
         <link rel="icon" type="image/png" sizes="512x512" href="https://nduboi.fr/build/img/android-chrome-512x512.png"/>
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+        <script type="application/ld+json">
         {`
           {
               "@context": "https://schema.org",
@@ -62,6 +63,7 @@ export default function RootLayout({
           }
           `
         }
+        </script>
       </header>
       <body className={inter.className}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
