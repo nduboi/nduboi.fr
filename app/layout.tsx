@@ -25,7 +25,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <header>
-        <title>Modern Nduboi</title>
+        <title>Nduboi</title>
         <meta name="description" content="Portfolio de Noa Roussiere, développeur web spécialisé en développement web à Epitech. Découvrez mes projets et contactez-moi."/>
         <meta name="keywords" content="Noa Roussiere, Nduboi, développeur web, portfolio, Epitech, projets web, nduboi"/>
         <meta name="theme-color" content="#000000"/>
@@ -38,12 +38,13 @@ export default function RootLayout({
             }
           `}
         </style>
-        <link rel="icon" type="image/png" sizes="32x32" href="https://nduboi.fr/build/img/favicon-32x32.png"/>
-        <link rel="icon" type="image/png" sizes="16x16" href="https://nduboi.fr/build/img/favicon-16x16.png"/>
-        <link rel="apple-touch-icon" sizes="180x180" href="https://nduboi.fr/build/img/apple-touch-icon.png"/>
-        <link rel="icon" type="image/png" sizes="192x192" href="https://nduboi.fr/build/img/android-chrome-192x192.png"/>
-        <link rel="icon" type="image/png" sizes="512x512" href="https://nduboi.fr/build/img/android-chrome-512x512.png"/>
+        <link rel="icon" type="image/png" sizes="32x32" href="build/img/favicon-32x32.png"/>
+        <link rel="icon" type="image/png" sizes="16x16" href="build/img/favicon-16x16.png"/>
+        <link rel="apple-touch-icon" sizes="180x180" href="build/img/apple-touch-icon.png"/>
+        <link rel="icon" type="image/png" sizes="192x192" href="build/img/android-chrome-192x192.png"/>
+        <link rel="icon" type="image/png" sizes="512x512" href="build/img/android-chrome-512x512.png"/>
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+        <link rel="manifest" href="build/img/site.webmanifest"/>
         <script type="application/ld+json">
         {`
           {
@@ -51,7 +52,7 @@ export default function RootLayout({
               "@type": "Person",
               "name": "Noa Roussiere",
               "alternateName": "Nduboi",
-              "url": "https://modern.nduboi.fr",
+              "url": "https://nduboi.fr",
               "jobTitle": "Développeur",
               "alumniOf": "Epitech",
               "sameAs": [
