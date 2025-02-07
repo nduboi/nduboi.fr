@@ -31,6 +31,13 @@ const projects = [
     url: "https://github.com/nduboi/Multichat",
     tech: ["NodeJS", "SocketIO", "Networking", "RTMP"],
   },
+  {
+    id: 5,
+    title: "Nduboi.fr",
+    description: "A personal portfolio, using modern techno.",
+    url: "https://github.com/nduboi/nduboi.fr",
+    tech: ["React", "TypeScript", "TailwindCSS", "NextJS"],
+  }
 ]
 
 export default function Projects() {
