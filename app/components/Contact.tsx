@@ -1,5 +1,6 @@
 "use client"
 import { motion } from "framer-motion"
+import { FaDiscord } from "react-icons/fa"
 import { FaGithub, FaInstagram, FaXTwitter, FaYoutube } from "react-icons/fa6"
 
 export default function Contact() {
@@ -24,6 +25,7 @@ export default function Contact() {
                   { icon: FaGithub, label: "GitHub", url: "https://github.com/nduboi" },
                   { icon: FaInstagram, label: "Instagram", url: "https://www.instagram.com/nduboiii" },
                   { icon: FaXTwitter, label: "X (Twitter)", url: "https://x.com/nduboi" },
+                  { icon: FaDiscord, label: "Discord", url: "https://discord.gg/Rn7eMCd" },
                 ].map((social, index) => (
                   <motion.a
                     key={social.label}
