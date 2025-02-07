@@ -20,7 +20,7 @@ export default function Hero() {
             I'm currently a student at Epitech, specializing in computer development.
           </p>
           <p className="text-xl mb-6 text-gray-600 dark:text-gray-400">
-            Outside my studies, I enjoy swimming, scuba diving, and exploring the space world.
+            Outside my studies, I enjoy swimming, running, scuba diving, and exploring the space world.
           </p>
           <div className="flex space-x-4">
             {[
