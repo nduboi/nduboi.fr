@@ -24,7 +24,7 @@ export default function Contact() {
                 {[
                   { icon: FaGithub, label: "GitHub", url: "https://github.com/nduboi" },
                   { icon: FaInstagram, label: "Instagram", url: "https://www.instagram.com/nduboiii" },
-                  { icon: FaXTwitter, label: "X (Twitter)", url: "https://x.com/nduboi" },
+                  { icon: FaXTwitter, label: "X (Twitter)", url: "https://x.com/nduboiii" },
                   { icon: FaDiscord, label: "Discord", url: "https://discord.gg/Rn7eMCd" },
                 ].map((social, index) => (
                   <motion.a
