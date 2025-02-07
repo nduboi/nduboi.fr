@@ -22,7 +22,7 @@ const projects = [
     title: "True or Dare",
     description: "A full true or dare game for online parties",
     url: "https://github.com/nduboi/Action-ou-verite",
-    tech: ["NodeJS", "HTML", "TailwindCSS"],
+    tech: ["NodeJS", "HTML", "TailwindCSS", "SQL", "SocketIO"],
   },
   {
     id: 4,
