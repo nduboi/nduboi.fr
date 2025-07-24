@@ -1,26 +1,25 @@
 export interface Project {
   id: number
   title: string
-  description: string
-  longDescription: string
+  descriptionKey: string
+  longDescriptionKey: string
   technologies: string[]
   githubUrl: string
   liveUrl?: string
   images: string[]
-  features: string[]
-  challenges: string[]
-  learnings: string[]
-  status: "Finished" | "In Progress" | "To Improve"
-  improvements?: string[]
+  featuresKey: string[]
+  challengesKey: string[]
+  learningsKey: string[]
+  status: "finished" | "inProgress" | "toImprove"
+  improvementsKey?: string[]
 }
 
 export const projectsData: Project[] = [
   {
     id: 1,
     title: "MyRPG",
-    description: "A complete RPG game with CSFML for Linux",
-    longDescription:
-      "MyRPG is a complete role-playing game developed in C with the CSFML library. This project represents several months of development and includes a combat system, inventory management, quest system, and a fully customized graphical interface.",
+    descriptionKey: "project.myrpg.description",
+    longDescriptionKey: "project.myrpg.longDescription",
     technologies: ["C", "CSFML", "Linux"],
     githubUrl: "https://github.com/nduboi/MyRPG",
     images: [
@@ -34,33 +33,32 @@ export const projectsData: Project[] = [
       "/placeholder.svg?height=400&width=600",
       "/placeholder.svg?height=400&width=600",
     ],
-    features: [
-      "Turn-based combat system",
-      "Advanced inventory management",
-      "Dynamic quest system",
-      "Intuitive graphical interface",
-      "Game save and load functionality",
+    featuresKey: [
+      "project.myrpg.feature1",
+      "project.myrpg.feature2",
+      "project.myrpg.feature3",
+      "project.myrpg.feature4",
+      "project.myrpg.feature5",
     ],
-    challenges: [
-      "Graphics performance optimization",
-      "Memory management in C",
-      "Modular code architecture",
-      "Precise collision system",
+    challengesKey: [
+      "project.myrpg.challenge1",
+      "project.myrpg.challenge2",
+      "project.myrpg.challenge3",
+      "project.myrpg.challenge4",
     ],
-    learnings: [
-      "Graphics programming with CSFML",
-      "Advanced memory management",
-      "Video game architecture",
-      "Performance optimization",
+    learningsKey: [
+      "project.myrpg.learning1",
+      "project.myrpg.learning2",
+      "project.myrpg.learning3",
+      "project.myrpg.learning4",
     ],
-    status: "Finished",
+    status: "finished",
   },
   {
     id: 2,
     title: "Arcade",
-    description: "An application where you can change display-lib and game on run-time",
-    longDescription:
-      "Arcade is an ambitious project that allows dynamic switching of graphics libraries and games during runtime. This project demonstrates advanced modular architecture with support for multiple graphics libraries and games.",
+    descriptionKey: "project.arcade.description",
+    longDescriptionKey: "project.arcade.longDescription",
     technologies: [
       "C++",
       "Dynamic library",
@@ -82,33 +80,32 @@ export const projectsData: Project[] = [
       "/placeholder.svg?height=400&width=600",
       "/placeholder.svg?height=400&width=600",
     ],
-    features: [
-      "Dynamic graphics library switching",
-      "Multiple game support",
-      "Modular architecture with plugins",
-      "Adaptive user interface",
-      "Persistent scoring system",
+    featuresKey: [
+      "project.arcade.feature1",
+      "project.arcade.feature2",
+      "project.arcade.feature3",
+      "project.arcade.feature4",
+      "project.arcade.feature5",
     ],
-    challenges: [
-      "Dynamic library management",
-      "Flexible plugin architecture",
-      "Cross-platform compatibility",
-      "Different graphics format handling",
+    challengesKey: [
+      "project.arcade.challenge1",
+      "project.arcade.challenge2",
+      "project.arcade.challenge3",
+      "project.arcade.challenge4",
     ],
-    learnings: [
-      "Advanced object-oriented programming",
-      "Dynamic library management",
-      "Plugin architecture",
-      "Multiple graphics APIs integration",
+    learningsKey: [
+      "project.arcade.learning1",
+      "project.arcade.learning2",
+      "project.arcade.learning3",
+      "project.arcade.learning4",
     ],
-    status: "Finished",
+    status: "finished",
   },
   {
     id: 3,
     title: "42sh",
-    description: "A shell with C for Linux",
-    longDescription:
-      "42sh is a complete implementation of a Unix shell in C. This project reproduces the main functionalities of bash, including command execution, pipe management, redirections, and environment variables.",
+    descriptionKey: "project.42sh.description",
+    longDescriptionKey: "project.42sh.longDescription",
     technologies: ["C", "Shell Scripting", "Linux"],
     githubUrl: "https://github.com/nduboi/42sh",
     images: [
@@ -116,40 +113,39 @@ export const projectsData: Project[] = [
       "/placeholder.svg?height=400&width=600",
       "/placeholder.svg?height=400&width=600",
     ],
-    features: [
-      "System command execution",
-      "Pipe and redirection management",
-      "Environment variables",
-      "Command history",
-      "Basic auto-completion",
+    featuresKey: [
+      "project.42sh.feature1",
+      "project.42sh.feature2",
+      "project.42sh.feature3",
+      "project.42sh.feature4",
+      "project.42sh.feature5",
     ],
-    challenges: [
-      "Complex command parsing",
-      "Child process management",
-      "Pipe implementation",
-      "System signal handling",
+    challengesKey: [
+      "project.42sh.challenge1",
+      "project.42sh.challenge2",
+      "project.42sh.challenge3",
+      "project.42sh.challenge4",
     ],
-    learnings: [
-      "System programming in C",
-      "Unix process management",
-      "Parsing and lexical analysis",
-      "Unix shell architecture",
+    learningsKey: [
+      "project.42sh.learning1",
+      "project.42sh.learning2",
+      "project.42sh.learning3",
+      "project.42sh.learning4",
     ],
-    status: "To Improve",
-    improvements: [
-      "Add alias support",
-      "Improve auto-completion",
-      "Implement persistent history",
-      "Add syntax highlighting",
-      "Optimize parsing performance",
+    status: "toImprove",
+    improvementsKey: [
+      "project.42sh.improvement1",
+      "project.42sh.improvement2",
+      "project.42sh.improvement3",
+      "project.42sh.improvement4",
+      "project.42sh.improvement5",
     ],
   },
   {
     id: 4,
     title: "Truth or Dare",
-    description: "A full true or dare game for online parties",
-    longDescription:
-      "Truth or Dare is an interactive web application designed to liven up parties with friends. The application offers customizable challenges, a point system, and a modern, responsive interface with real-time multiplayer support.",
+    descriptionKey: "project.truthordare.description",
+    longDescriptionKey: "project.truthordare.longDescription",
     technologies: [
       "NodeJS",
       "HTML",
@@ -165,36 +161,35 @@ export const projectsData: Project[] = [
     githubUrl: "https://github.com/nduboi/Truth-or-Dare",
     liveUrl: "https://av.nduboi.fr",
     images: ["/placeholder.svg?height=400&width=200", "/placeholder.svg?height=400&width=300"],
-    features: [
-      "Modern and responsive user interface",
-      "Customizable challenges by category",
-      "Point system and leaderboards",
-      "Real-time multiplayer mode",
-      "Extensible challenge database",
-      "Authentication system",
+    featuresKey: [
+      "project.truthordare.feature1",
+      "project.truthordare.feature2",
+      "project.truthordare.feature3",
+      "project.truthordare.feature4",
+      "project.truthordare.feature5",
+      "project.truthordare.feature6",
     ],
-    challenges: [
-      "Real-time multiplayer synchronization",
-      "Intuitive user interface",
-      "User session management",
-      "Mobile and responsive optimization",
-      "Docker deployment",
+    challengesKey: [
+      "project.truthordare.challenge1",
+      "project.truthordare.challenge2",
+      "project.truthordare.challenge3",
+      "project.truthordare.challenge4",
+      "project.truthordare.challenge5",
     ],
-    learnings: [
-      "Modern full-stack web development",
-      "REST API architecture",
-      "WebSockets and real-time communication",
-      "Deployment and containerization",
-      "Modern user interface design",
+    learningsKey: [
+      "project.truthordare.learning1",
+      "project.truthordare.learning2",
+      "project.truthordare.learning3",
+      "project.truthordare.learning4",
+      "project.truthordare.learning5",
     ],
-    status: "In Progress",
+    status: "inProgress",
   },
   {
     id: 5,
     title: "Multichat",
-    description: "A project that manipulates socket and other protocols like RTMP",
-    longDescription:
-      "Multichat is an advanced communication application that implements multiple network protocols. The project explores real-time communications, socket management, and integration of protocols like RTMP for streaming.",
+    descriptionKey: "project.multichat.description",
+    longDescriptionKey: "project.multichat.longDescription",
     technologies: ["NodeJS", "SocketIO", "Networking", "RTMP"],
     githubUrl: "https://github.com/nduboi/Multichat",
     images: [
@@ -202,70 +197,69 @@ export const projectsData: Project[] = [
       "/placeholder.svg?height=400&width=600",
       "/placeholder.svg?height=400&width=600",
     ],
-    features: [
-      "Real-time multi-user communication",
-      "Multi-protocol support (WebSocket, RTMP)",
-      "TCP/UDP socket management",
-      "RTMP streaming interface",
-      "Multi-threaded architecture",
-      "Chat room system",
+    featuresKey: [
+      "project.multichat.feature1",
+      "project.multichat.feature2",
+      "project.multichat.feature3",
+      "project.multichat.feature4",
+      "project.multichat.feature5",
+      "project.multichat.feature6",
     ],
-    challenges: [
-      "Network protocol implementation",
-      "Concurrency and threading management",
-      "Network performance optimization",
-      "Communication security",
-      "RTMP protocol integration",
+    challengesKey: [
+      "project.multichat.challenge1",
+      "project.multichat.challenge2",
+      "project.multichat.challenge3",
+      "project.multichat.challenge4",
+      "project.multichat.challenge5",
     ],
-    learnings: [
-      "Advanced network programming",
-      "Real-time communication protocols",
-      "Distributed architecture",
-      "Network performance optimization",
-      "Streaming and multimedia protocols",
+    learningsKey: [
+      "project.multichat.learning1",
+      "project.multichat.learning2",
+      "project.multichat.learning3",
+      "project.multichat.learning4",
+      "project.multichat.learning5",
     ],
-    status: "To Improve",
-    improvements: [
-      "Add communication encryption",
-      "Implement robust authentication system",
-      "Optimize bandwidth management",
-      "Add support for new protocols",
-      "Improve user interface",
-      "Add message persistence",
+    status: "toImprove",
+    improvementsKey: [
+      "project.multichat.improvement1",
+      "project.multichat.improvement2",
+      "project.multichat.improvement3",
+      "project.multichat.improvement4",
+      "project.multichat.improvement5",
+      "project.multichat.improvement6",
     ],
   },
   {
     id: 6,
     title: "Nduboi.fr",
-    description: "A personal portfolio, using modern techno.",
-    longDescription:
-      "My personal portfolio developed with modern web technologies. This site showcases my projects, skills, and experiences in an interactive and responsive way, with modern design and smooth animations.",
+    descriptionKey: "project.nduboi.description",
+    longDescriptionKey: "project.nduboi.longDescription",
     technologies: ["React", "TypeScript", "TailwindCSS", "NextJS"],
     githubUrl: "https://github.com/nduboi/nduboi.fr",
     liveUrl: "https://nduboi.fr",
     images: ["/placeholder.svg?height=400&width=600", "/placeholder.svg?height=400&width=600"],
-    features: [
-      "Modern and responsive design",
-      "Smooth animations with Framer Motion",
-      "Automatic dark/light mode",
-      "Interactive projects section",
-      "Functional contact form",
-      "SEO optimization",
+    featuresKey: [
+      "project.nduboi.feature1",
+      "project.nduboi.feature2",
+      "project.nduboi.feature3",
+      "project.nduboi.feature4",
+      "project.nduboi.feature5",
+      "project.nduboi.feature6",
     ],
-    challenges: [
-      "Responsive design on all devices",
-      "Performance optimization",
-      "Smooth and natural animations",
-      "Web accessibility",
-      "Deployment and hosting",
+    challengesKey: [
+      "project.nduboi.challenge1",
+      "project.nduboi.challenge2",
+      "project.nduboi.challenge3",
+      "project.nduboi.challenge4",
+      "project.nduboi.challenge5",
     ],
-    learnings: [
-      "Next.js framework and modern React",
-      "Advanced styling with TailwindCSS",
-      "Animations with Framer Motion",
-      "Web optimization and SEO",
-      "Modern UX/UI design",
+    learningsKey: [
+      "project.nduboi.learning1",
+      "project.nduboi.learning2",
+      "project.nduboi.learning3",
+      "project.nduboi.learning4",
+      "project.nduboi.learning5",
     ],
-    status: "In Progress",
+    status: "inProgress",
   },
 ]

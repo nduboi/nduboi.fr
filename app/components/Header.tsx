@@ -3,10 +3,12 @@ import { useState, useEffect } from "react"
 import { motion } from "framer-motion"
 import { useTheme } from "next-themes"
 import { FaSun, FaMoon } from "react-icons/fa"
+import { useLanguage } from "../contexts/LanguageContext"
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false)
   const { theme, setTheme } = useTheme()
+  const { language, setLanguage, t } = useLanguage()
   const [scrolled, setScrolled] = useState(false)
   const [systemTheme, setSystemTheme] = useState<"light" | "dark">("light")
 
@@ -49,18 +51,31 @@ export default function Header() {
               Nduboi
             </a>
           </motion.div>
-          <div className="hidden md:flex space-x-6">
-            {["About", "Projects", "Contact"].map((item) => (
+          <div className="hidden md:flex space-x-6 items-center">
+            {["about", "projects", "contact"].map((item) => (
               <motion.a
                 key={item}
-                href={`#${item.toLowerCase()}`}
+                href={`#${item}`}
                 className="text-gray-800 dark:text-gray-200 hover:text-yellow-500 dark:hover:text-yellow-500 transition-colors"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
               >
-                {item}
+                {t(`nav.${item}`)}
               </motion.a>
             ))}
+
+            {/* Language Toggle */}
+            <motion.button
+              onClick={() => setLanguage(language === "fr" ? "en" : "fr")}
+              className="flex items-center space-x-1 text-gray-800 dark:text-gray-200 hover:text-yellow-500 dark:hover:text-yellow-500 transition-colors px-2 py-1 rounded-md border border-gray-300 dark:border-gray-600"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <span className="text-sm font-medium">{language.toUpperCase()}</span>
+              <span className="text-xs">🌐</span>
+            </motion.button>
+
+            {/* Theme Toggle */}
             <motion.button
               onClick={() =>
                 setTheme(theme === "dark" || (theme === "system" && systemTheme === "dark") ? "light" : "dark")
@@ -105,17 +120,29 @@ export default function Header() {
             transition={{ duration: 0.3 }}
             className="md:hidden mt-4 space-y-2 bg-white dark:bg-gray-800 p-4 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700"
           >
-            {["About", "Projects", "Contact"].map((item) => (
+            {["about", "projects", "contact"].map((item) => (
               <motion.a
                 key={item}
-                href={`#${item.toLowerCase()}`}
+                href={`#${item}`}
                 className="block text-gray-800 dark:text-gray-200 hover:text-yellow-500 dark:hover:text-yellow-500 transition-colors"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                {item}
+                {t(`nav.${item}`)}
               </motion.a>
             ))}
+
+            {/* Mobile Language Toggle */}
+            <motion.button
+              onClick={() => setLanguage(language === "fr" ? "en" : "fr")}
+              className="block w-full text-left text-gray-800 dark:text-gray-200 hover:text-yellow-500 dark:hover:text-yellow-500 transition-colors"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              🌐 {language === "fr" ? "Switch to English" : "Passer en Français"}
+            </motion.button>
+
+            {/* Mobile Theme Toggle */}
             <motion.button
               onClick={() =>
                 setTheme(theme === "dark" || (theme === "system" && systemTheme === "dark") ? "light" : "dark")
@@ -125,8 +152,8 @@ export default function Header() {
               whileTap={{ scale: 0.95 }}
             >
               {theme === "dark" || (theme === "system" && systemTheme === "dark")
-                ? "Switch to Light Mode"
-                : "Switch to Dark Mode"}
+                ? t("theme.switchToLight")
+                : t("theme.switchToDark")}
             </motion.button>
           </motion.div>
         )}

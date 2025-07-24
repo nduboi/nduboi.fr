@@ -2,8 +2,11 @@
 import Image from "next/image"
 import { motion } from "framer-motion"
 import { FaGithub, FaLinkedin, FaInstagram } from "react-icons/fa"
+import { useLanguage } from "../contexts/LanguageContext"
 
 export default function Hero() {
+  const { t } = useLanguage()
+
   return (
     <section id="about" className="pt-32 pb-20 bg-gray-100 dark:bg-gray-900 overflow-hidden">
       <div className="container mx-auto px-6 max-w-7xl flex flex-col md:flex-row items-center">
@@ -14,14 +17,10 @@ export default function Hero() {
           className="md:w-1/2 mb-8 md:mb-0"
         >
           <h1 className="text-5xl font-bold mb-4 text-gray-800 dark:text-gray-200">
-            Hi, I'm <span className="text-yellow-500">Nduboi</span>
+            {t("hero.title")} <span className="text-yellow-500">Nduboi</span>
           </h1>
-          <p className="text-xl mb-6 text-gray-600 dark:text-gray-400">
-            I'm currently a student at Epitech, specializing in computer development.
-          </p>
-          <p className="text-xl mb-6 text-gray-600 dark:text-gray-400">
-            Outside my studies, I enjoy swimming, scuba diving, and exploring the space world.
-          </p>
+          <p className="text-xl mb-6 text-gray-600 dark:text-gray-400">{t("hero.description1")}</p>
+          <p className="text-xl mb-6 text-gray-600 dark:text-gray-400">{t("hero.description2")}</p>
           <div className="flex space-x-4">
             {[
               { icon: FaGithub, link: "https://github.com/nduboi" },

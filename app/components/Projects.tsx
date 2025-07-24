@@ -3,19 +3,20 @@ import { motion } from "framer-motion"
 import { FaGithub, FaExternalLinkAlt, FaArrowRight } from "react-icons/fa"
 import Link from "next/link"
 import { useEffect, useRef, useState } from "react"
+import { useLanguage } from "../contexts/LanguageContext"
 
 const projects = [
   {
     id: 1,
     title: "MyRPG",
-    description: "A complete RPG game with CSFML for Linux",
+    descriptionKey: "project.myrpg.description",
     url: "https://github.com/nduboi/MyRPG",
     tech: ["C", "CSFML", "Linux"],
   },
   {
     id: 2,
     title: "Arcade",
-    description: "An application where you can change display-lib and game on run-time",
+    descriptionKey: "project.arcade.description",
     url: "https://github.com/nduboi/Arcade",
     tech: [
       "C++",
@@ -36,28 +37,28 @@ const projects = [
   {
     id: 3,
     title: "42sh",
-    description: "A shell with C for Linux",
+    descriptionKey: "project.42sh.description",
     url: "https://github.com/nduboi/42sh",
     tech: ["C", "Shell Scripting", "Linux"],
   },
   {
     id: 4,
     title: "Truth or Dare",
-    description: "A full true or dare game for online parties",
+    descriptionKey: "project.truthordare.description",
     url: "https://github.com/nduboi/Truth-or-Dare",
     tech: ["NodeJS", "HTML", "TailwindCSS", "SQL", "SocketIO", "Next.js", "API", "React", "TypeScript", "Docker"],
   },
   {
     id: 5,
     title: "Multichat",
-    description: "A project that manipulates socket and other protocols like RTMP",
+    descriptionKey: "project.multichat.description",
     url: "https://github.com/nduboi/Multichat",
     tech: ["NodeJS", "SocketIO", "Networking", "RTMP"],
   },
   {
     id: 6,
     title: "Nduboi.fr",
-    description: "A personal portfolio, using modern techno.",
+    descriptionKey: "project.nduboi.description",
     url: "https://github.com/nduboi/nduboi.fr",
     tech: ["React", "TypeScript", "TailwindCSS", "NextJS"],
   },
@@ -99,10 +100,12 @@ function TechScrollContainer({ tech }: { tech: string[] }) {
 }
 
 export default function Projects() {
+  const { t } = useLanguage()
+
   return (
     <section id="projects" className="py-20 bg-gray-200 dark:bg-gray-800">
       <div className="container mx-auto px-6">
-        <h2 className="text-4xl font-bold mb-12 text-center text-gray-800 dark:text-gray-200">Mes Projets</h2>
+        <h2 className="text-4xl font-bold mb-12 text-center text-gray-800 dark:text-gray-200">{t("projects.title")}</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
           {projects.map((project, index) => (
             <motion.div
@@ -114,7 +117,7 @@ export default function Projects() {
             >
               <div className="p-6 flex flex-col flex-grow">
                 <h3 className="text-2xl font-semibold mb-2 text-gray-800 dark:text-gray-200">{project.title}</h3>
-                <p className="text-gray-600 dark:text-gray-400 mb-4 flex-grow">{project.description}</p>
+                <p className="text-gray-600 dark:text-gray-400 mb-4 flex-grow">{t(project.descriptionKey)}</p>
 
                 {/* Technologies avec scroll horizontal personnalisé */}
                 <div className="mb-6">
@@ -158,7 +161,7 @@ export default function Projects() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              See all my projects
+              {t("projects.viewAll")}
               <FaArrowRight className="ml-2" />
             </motion.button>
           </Link>

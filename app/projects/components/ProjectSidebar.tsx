@@ -1,6 +1,7 @@
 "use client"
 import { motion } from "framer-motion"
 import type { Project } from "../data/projectsData"
+import { useLanguage } from "../../contexts/LanguageContext"
 
 interface ProjectSidebarProps {
   projects: Project[]
@@ -10,11 +11,11 @@ interface ProjectSidebarProps {
 
 const getStatusColor = (status: Project["status"]) => {
   switch (status) {
-    case "Finished":
+    case "finished":
       return "bg-green-500"
-    case "In Progress":
+    case "inProgress":
       return "bg-yellow-500"
-    case "To Improve":
+    case "toImprove":
       return "bg-orange-500"
     default:
       return "bg-gray-500"
@@ -23,11 +24,11 @@ const getStatusColor = (status: Project["status"]) => {
 
 const getStatusTextColor = (status: Project["status"]) => {
   switch (status) {
-    case "Finished":
+    case "finished":
       return "text-green-700 dark:text-green-300"
-    case "In Progress":
+    case "inProgress":
       return "text-yellow-700 dark:text-yellow-300"
-    case "To Improve":
+    case "toImprove":
       return "text-orange-700 dark:text-orange-300"
     default:
       return "text-gray-700 dark:text-gray-300"
@@ -35,9 +36,12 @@ const getStatusTextColor = (status: Project["status"]) => {
 }
 
 export default function ProjectSidebar({ projects, selectedProject, onSelectProject }: ProjectSidebarProps) {
+  const { t } = useLanguage()
   return (
     <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-4 sm:p-6 border border-gray-200 dark:border-gray-700">
-      <h2 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 text-gray-800 dark:text-gray-200">Projects</h2>
+      <h2 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 text-gray-800 dark:text-gray-200">
+        {t("projects.title")}
+      </h2>
       <div className="space-y-2 sm:space-y-3">
         {projects.map((project, index) => (
           <motion.button
@@ -63,11 +67,11 @@ export default function ProjectSidebar({ projects, selectedProject, onSelectProj
                 <span
                   className={`text-xs font-medium ${selectedProject.id === project.id ? "text-gray-900" : getStatusTextColor(project.status)}`}
                 >
-                  {project.status}
+                  {t(`status.${project.status}`)}
                 </span>
               </div>
             </div>
-            <p className="text-xs sm:text-sm opacity-80 line-clamp-2">{project.description}</p>
+            <p className="text-xs sm:text-sm opacity-80 line-clamp-2">{t(project.descriptionKey)}</p>
           </motion.button>
         ))}
       </div>

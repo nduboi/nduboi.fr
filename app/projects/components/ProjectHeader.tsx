@@ -4,9 +4,11 @@ import { motion } from "framer-motion"
 import { useTheme } from "next-themes"
 import { FaSun, FaMoon, FaArrowLeft } from "react-icons/fa"
 import Link from "next/link"
+import { useLanguage } from "../../contexts/LanguageContext"
 
 export default function ProjectHeader() {
   const { theme, setTheme } = useTheme()
+  const { language, setLanguage, t } = useLanguage()
   const [scrolled, setScrolled] = useState(false)
   const [systemTheme, setSystemTheme] = useState<"light" | "dark">("light")
 
@@ -49,7 +51,7 @@ export default function ProjectHeader() {
                 whileTap={{ scale: 0.95 }}
               >
                 <FaArrowLeft className="mr-1 sm:mr-2 text-sm sm:text-base" />
-                Back
+                {t("nav.back")}
               </motion.button>
             </Link>
             <div className="h-4 sm:h-6 w-px bg-gray-300 dark:bg-gray-600"></div>
@@ -63,20 +65,34 @@ export default function ProjectHeader() {
             </motion.div>
           </div>
 
-          <motion.button
-            onClick={() =>
-              setTheme(theme === "dark" || (theme === "system" && systemTheme === "dark") ? "light" : "dark")
-            }
-            className="text-gray-800 dark:text-gray-200 hover:text-yellow-500 dark:hover:text-yellow-500 transition-colors p-2"
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            {theme === "dark" || (theme === "system" && systemTheme === "dark") ? (
-              <FaSun size={18} className="sm:w-5 sm:h-5" />
-            ) : (
-              <FaMoon size={18} className="sm:w-5 sm:h-5" />
-            )}
-          </motion.button>
+          <div className="flex items-center space-x-2 sm:space-x-4">
+            {/* Language Toggle */}
+            <motion.button
+              onClick={() => setLanguage(language === "fr" ? "en" : "fr")}
+              className="flex items-center space-x-1 text-gray-800 dark:text-gray-200 hover:text-yellow-500 dark:hover:text-yellow-500 transition-colors px-2 py-1 rounded-md border border-gray-300 dark:border-gray-600"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <span className="text-sm font-medium">{language.toUpperCase()}</span>
+              <span className="text-xs">🌐</span>
+            </motion.button>
+
+            {/* Theme Toggle */}
+            <motion.button
+              onClick={() =>
+                setTheme(theme === "dark" || (theme === "system" && systemTheme === "dark") ? "light" : "dark")
+              }
+              className="text-gray-800 dark:text-gray-200 hover:text-yellow-500 dark:hover:text-yellow-500 transition-colors p-2"
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              {theme === "dark" || (theme === "system" && systemTheme === "dark") ? (
+                <FaSun size={18} className="sm:w-5 sm:h-5" />
+              ) : (
+                <FaMoon size={18} className="sm:w-5 sm:h-5" />
+              )}
+            </motion.button>
+          </div>
         </div>
       </nav>
     </motion.header>

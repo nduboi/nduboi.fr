@@ -3,6 +3,7 @@ import { motion } from "framer-motion"
 import { FaGithub, FaExternalLinkAlt, FaCode, FaLightbulb, FaMountain, FaTools } from "react-icons/fa"
 import type { Project } from "../data/projectsData"
 import Image from "next/image"
+import { useLanguage } from "../../contexts/LanguageContext"
 
 interface ProjectDetailsProps {
   project: Project
@@ -10,11 +11,11 @@ interface ProjectDetailsProps {
 
 const getStatusColor = (status: Project["status"]) => {
   switch (status) {
-    case "Finished":
+    case "finished":
       return "bg-green-500"
-    case "In Progress":
+    case "inProgress":
       return "bg-yellow-500"
-    case "To Improve":
+    case "toImprove":
       return "bg-orange-500"
     default:
       return "bg-gray-500"
@@ -23,11 +24,11 @@ const getStatusColor = (status: Project["status"]) => {
 
 const getStatusTextColor = (status: Project["status"]) => {
   switch (status) {
-    case "Finished":
+    case "finished":
       return "text-green-700 dark:text-green-300"
-    case "In Progress":
+    case "inProgress":
       return "text-yellow-700 dark:text-yellow-300"
-    case "To Improve":
+    case "toImprove":
       return "text-orange-700 dark:text-orange-300"
     default:
       return "text-gray-700 dark:text-gray-300"
@@ -35,6 +36,17 @@ const getStatusTextColor = (status: Project["status"]) => {
 }
 
 export default function ProjectDetails({ project }: ProjectDetailsProps) {
+  const { t } = useLanguage()
+
+  // Determine if we have improvements to show
+  const hasImprovements =
+    project.status === "toImprove" && project.improvementsKey && project.improvementsKey.length > 0
+
+  // Dynamic grid classes based on whether we have improvements
+  const gridClasses = hasImprovements
+    ? "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8"
+    : "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8"
+
   return (
     <motion.div
       key={project.id}
@@ -77,7 +89,7 @@ export default function ProjectDetails({ project }: ProjectDetailsProps) {
                 whileTap={{ scale: 0.95 }}
               >
                 <FaExternalLinkAlt className="mr-2" />
-                View Site
+                {t("projects.viewSite")}
               </motion.a>
             )}
           </div>
@@ -95,13 +107,13 @@ export default function ProjectDetails({ project }: ProjectDetailsProps) {
           ))}
         </div>
 
-        <p className="text-base sm:text-lg text-gray-600 dark:text-gray-400">{project.longDescription}</p>
+        <p className="text-base sm:text-lg text-gray-600 dark:text-gray-400">{t(project.longDescriptionKey)}</p>
       </div>
 
       {/* Images with horizontal scroll */}
       <div className="p-4 sm:p-6 lg:p-8 border-b border-gray-200 dark:border-gray-700">
         <h2 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 text-gray-800 dark:text-gray-200">
-          Project Overview
+          {t("projects.overview")}
         </h2>
         <div className="overflow-x-auto pb-4">
           <div className="flex space-x-4 min-w-max">
@@ -125,25 +137,19 @@ export default function ProjectDetails({ project }: ProjectDetailsProps) {
         </div>
       </div>
 
-      {/* Features, Challenges, Learnings, Improvements */}
-      <div
-        className={`p-4 sm:p-6 lg:p-8 grid grid-cols-1 gap-6 sm:gap-8 ${
-          project.status === "To Improve" && project.improvements
-            ? "md:grid-cols-2 lg:grid-cols-4"
-            : "md:grid-cols-2 lg:grid-cols-3"
-        }`}
-      >
+      {/* Features, Challenges, Learnings, Improvements - Dynamic grid */}
+      <div className={`p-4 sm:p-6 lg:p-8 ${gridClasses}`}>
         {/* Features */}
         <div>
           <h3 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-gray-800 dark:text-gray-200 flex items-center">
             <FaCode className="mr-2 text-yellow-500 text-base sm:text-lg" />
-            Features
+            {t("projects.features")}
           </h3>
           <ul className="space-y-2">
-            {project.features.map((feature, index) => (
+            {project.featuresKey?.map((featureKey, index) => (
               <li key={index} className="text-sm sm:text-base text-gray-600 dark:text-gray-400 flex items-start">
                 <span className="w-2 h-2 bg-yellow-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                {feature}
+                {t(featureKey)}
               </li>
             ))}
           </ul>
@@ -153,13 +159,13 @@ export default function ProjectDetails({ project }: ProjectDetailsProps) {
         <div>
           <h3 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-gray-800 dark:text-gray-200 flex items-center">
             <FaMountain className="mr-2 text-red-500 text-base sm:text-lg" />
-            Challenges
+            {t("projects.challenges")}
           </h3>
           <ul className="space-y-2">
-            {project.challenges.map((challenge, index) => (
+            {project.challengesKey?.map((challengeKey, index) => (
               <li key={index} className="text-sm sm:text-base text-gray-600 dark:text-gray-400 flex items-start">
                 <span className="w-2 h-2 bg-red-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                {challenge}
+                {t(challengeKey)}
               </li>
             ))}
           </ul>
@@ -169,30 +175,30 @@ export default function ProjectDetails({ project }: ProjectDetailsProps) {
         <div>
           <h3 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-gray-800 dark:text-gray-200 flex items-center">
             <FaLightbulb className="mr-2 text-blue-500 text-base sm:text-lg" />
-            Learnings
+            {t("projects.learnings")}
           </h3>
           <ul className="space-y-2">
-            {project.learnings.map((learning, index) => (
+            {project.learningsKey?.map((learningKey, index) => (
               <li key={index} className="text-sm sm:text-base text-gray-600 dark:text-gray-400 flex items-start">
                 <span className="w-2 h-2 bg-blue-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                {learning}
+                {t(learningKey)}
               </li>
             ))}
           </ul>
         </div>
 
-        {/* Improvements (only if status is "To Improve") */}
-        {project.status === "To Improve" && project.improvements && (
+        {/* Improvements - Only rendered if they exist */}
+        {hasImprovements && (
           <div>
             <h3 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-gray-800 dark:text-gray-200 flex items-center">
               <FaTools className="mr-2 text-orange-500 text-base sm:text-lg" />
-              To Improve
+              {t("projects.toImprove")}
             </h3>
             <ul className="space-y-2">
-              {project.improvements.map((improvement, index) => (
+              {project.improvementsKey!.map((improvementKey, index) => (
                 <li key={index} className="text-sm sm:text-base text-gray-600 dark:text-gray-400 flex items-start">
                   <span className="w-2 h-2 bg-orange-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                  {improvement}
+                  {t(improvementKey)}
                 </li>
               ))}
             </ul>

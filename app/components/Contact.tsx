@@ -15,6 +15,7 @@ import {
   SiTailwindcss,
   SiDocker,
 } from "react-icons/si"
+import { useLanguage } from "../contexts/LanguageContext"
 
 const skills = [
   { name: "C", icon: SiC, color: "text-blue-600" },
@@ -32,15 +33,16 @@ const skills = [
 ]
 
 export default function Contact() {
+  const { t } = useLanguage()
   return (
     <section id="contact" className="py-20 bg-gray-100 dark:bg-gray-900">
       <div className="container mx-auto px-6">
-        <h2 className="text-4xl font-bold mb-12 text-center text-gray-800 dark:text-gray-200">Compétences & Contact</h2>
+        <h2 className="text-4xl font-bold mb-12 text-center text-gray-800 dark:text-gray-200">{t("contact.title")}</h2>
         <div className="max-w-6xl mx-auto bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden border border-gray-200 dark:border-gray-700">
           <div className="md:flex">
             {/* Skills Section */}
             <div className="md:w-2/3 p-6 lg:p-8 flex flex-col">
-              <h3 className="text-2xl font-semibold mb-6 text-gray-800 dark:text-gray-200">Technologies & Outils</h3>
+              <h3 className="text-2xl font-semibold mb-6 text-gray-800 dark:text-gray-200">{t("contact.skills")}</h3>
               <div className="grid grid-cols-3 lg:grid-cols-4 gap-3 flex-1">
                 {skills.map((skill, index) => (
                   <motion.div
@@ -62,7 +64,9 @@ export default function Contact() {
 
             {/* Contact Section */}
             <div className="md:w-1/3 p-6 lg:p-8 bg-gray-50 dark:bg-gray-700 flex flex-col">
-              <h3 className="text-2xl font-semibold mb-6 text-gray-800 dark:text-gray-200">Restons connectés</h3>
+              <h3 className="text-2xl font-semibold mb-6 text-gray-800 dark:text-gray-200">
+                {t("contact.stayConnected")}
+              </h3>
 
               {/* Email */}
               <motion.div
@@ -74,7 +78,7 @@ export default function Contact() {
                 <div className="flex items-center">
                   <FaEnvelope size={20} className="text-yellow-500 mr-3" />
                   <div>
-                    <span className="text-gray-800 dark:text-gray-200 font-medium block">Email</span>
+                    <span className="text-gray-800 dark:text-gray-200 font-medium block">{t("contact.email")}</span>
                     <a
                       href="mailto:noa.roussiere@epitech.eu"
                       className="text-gray-600 dark:text-gray-400 text-sm hover:text-yellow-500 transition-colors"
@@ -92,25 +96,25 @@ export default function Contact() {
                     icon: FaGithub,
                     label: "GitHub",
                     url: "https://github.com/nduboi",
-                    description: "Mes projets et contributions",
+                    description: t("contact.github"),
                   },
                   {
                     icon: FaInstagram,
                     label: "Instagram",
                     url: "https://www.instagram.com/nduboiii",
-                    description: "Projets et inspirations",
+                    description: t("contact.instagram"),
                   },
                   {
                     icon: FaXTwitter,
                     label: "X (Twitter)",
                     url: "https://x.com/nduboi",
-                    description: "Actualités tech",
+                    description: t("contact.twitter"),
                   },
                   {
                     icon: FaYoutube,
                     label: "YouTube",
                     url: "https://www.youtube.com/@nduboi",
-                    description: "Tutoriels et projets",
+                    description: t("contact.youtube"),
                   },
                 ].map((social, index) => (
                   <motion.a
@@ -138,10 +142,10 @@ export default function Contact() {
 
               {/* Contact Info */}
               <div className="mt-4 p-3 bg-white dark:bg-gray-600 rounded-xl border border-gray-200 dark:border-gray-500">
-                <h4 className="text-base font-semibold mb-2 text-gray-800 dark:text-gray-200">💼 Collaboration</h4>
-                <p className="text-gray-600 dark:text-gray-400 text-xs">
-                  Intéressé par une collaboration ou un projet ? N'hésitez pas à me contacter !
-                </p>
+                <h4 className="text-base font-semibold mb-2 text-gray-800 dark:text-gray-200">
+                  {t("contact.collaboration")}
+                </h4>
+                <p className="text-gray-600 dark:text-gray-400 text-xs">{t("contact.collaborationText")}</p>
               </div>
             </div>
           </div>

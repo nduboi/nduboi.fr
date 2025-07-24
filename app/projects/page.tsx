@@ -5,9 +5,11 @@ import Footer from "../components/Footer"
 import ProjectSidebar from "./components/ProjectSidebar"
 import ProjectDetails from "./components/ProjectDetails"
 import { projectsData } from "./data/projectsData"
+import { useLanguage } from "../contexts/LanguageContext"
 
 export default function ProjectsPage() {
   const [selectedProject, setSelectedProject] = useState(projectsData[0])
+  const { t } = useLanguage()
 
   return (
     <div className="min-h-screen bg-gray-100 dark:bg-gray-900">
@@ -15,7 +17,7 @@ export default function ProjectsPage() {
       <main className="pt-20">
         <div className="container mx-auto px-4 sm:px-6 py-4 sm:py-8">
           <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-6 sm:mb-8 text-center text-gray-800 dark:text-gray-200">
-            My Projects
+            {t("projects.myProjects")}
           </h1>
           <div className="flex flex-col lg:flex-row gap-4 sm:gap-6 lg:gap-8">
             <div className="lg:w-1/4">
