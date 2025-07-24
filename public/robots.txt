@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://nduboi.fr
+
+# Sitemaps
+Sitemap: https://nduboi.fr/sitemap.xml
