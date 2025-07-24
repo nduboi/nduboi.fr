@@ -1,8 +1,6 @@
-import { FaHeart } from "react-icons/fa6"
-
 export default function Footer() {
   return (
-    <footer className="dark:bg-gray-800 bg-gray-200 text-gray-800 dark:text-gray-300 py-8">
+    <footer className="dark:bg-gray-800 bg-gray-200 text-gray-800 dark:text-gray-300 py-8 border-t border-gray-300 dark:border-gray-600">
       <div className="container mx-auto px-6">
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="mb-4 md:mb-0">
@@ -17,4 +15,3 @@ export default function Footer() {
     </footer>
   )
 }
-

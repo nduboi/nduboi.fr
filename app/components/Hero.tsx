@@ -20,7 +20,7 @@ export default function Hero() {
             I'm currently a student at Epitech, specializing in computer development.
           </p>
           <p className="text-xl mb-6 text-gray-600 dark:text-gray-400">
-            Outside my studies, I enjoy swimming, running, scuba diving, and exploring the space world.
+            Outside my studies, I enjoy swimming, scuba diving, and exploring the space world.
           </p>
           <div className="flex space-x-4">
             {[
@@ -51,10 +51,10 @@ export default function Hero() {
           <motion.div
             whileHover={{ scale: 1.05 }}
             transition={{ duration: 0.3 }}
-            className="relative rounded-full overflow-hidden border-4 border-yellow-500 shadow-lg"
+            className="relative rounded-full overflow-hidden border-4 border-yellow-500 shadow-xl"
           >
             <Image
-              src="build/img/nduboi_picture.JPEG"
+              src="https://nduboi.fr/build/img/nduboi_picture.JPEG"
               alt="Nduboi"
               width={400}
               height={400}

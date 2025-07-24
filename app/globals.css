@@ -21,3 +21,60 @@ body {
   background: rgb(var(--background));
 }
 
+/* Custom scrollbar styles */
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: rgb(234, 179, 8) transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  height: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: rgba(156, 163, 175, 0.2);
+  border-radius: 10px;
+  margin: 0 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: linear-gradient(90deg, rgb(234, 179, 8), rgb(245, 158, 11));
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(90deg, rgb(245, 158, 11), rgb(234, 179, 8));
+  transform: scaleY(1.2);
+}
+
+/* Dark mode scrollbar */
+.dark .custom-scrollbar::-webkit-scrollbar-track {
+  background: rgba(75, 85, 99, 0.3);
+}
+
+/* Fade effect for scrollable content */
+.scroll-fade {
+  position: relative;
+}
+
+.scroll-fade::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 20px;
+  height: 100%;
+  background: linear-gradient(to left, rgb(255, 255, 255), transparent);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.dark .scroll-fade::after {
+  background: linear-gradient(to left, rgb(55, 65, 81), transparent);
+}
+
+.scroll-fade.has-overflow::after {
+  opacity: 1;
+}
