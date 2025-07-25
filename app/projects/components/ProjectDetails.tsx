@@ -4,6 +4,7 @@ import { FaGithub, FaExternalLinkAlt, FaCode, FaLightbulb, FaMountain, FaTools }
 import type { Project } from "../data/projectsData"
 import Image from "next/image"
 import { useLanguage } from "../../contexts/LanguageContext"
+import LiveStatusIndicator from "./LiveStatusIndicator"
 
 interface ProjectDetailsProps {
   project: Project
@@ -62,9 +63,15 @@ export default function ProjectDetails({ project }: ProjectDetailsProps) {
             <h1 className="text-2xl sm:text-3xl font-bold text-gray-800 dark:text-gray-200 mb-2 sm:mb-0 sm:mr-4">
               {project.title}
             </h1>
-            <div className="flex items-center">
-              <div className={`w-3 h-3 sm:w-4 sm:h-4 rounded-full ${getStatusColor(project.status)} mr-2`}></div>
-              <span className={`text-sm font-medium ${getStatusTextColor(project.status)}`}>{project.status}</span>
+            <div className="flex items-center space-x-3">
+              <div className="flex items-center">
+                <div className={`w-3 h-3 sm:w-4 sm:h-4 rounded-full ${getStatusColor(project.status)} mr-2`}></div>
+                <span className={`text-sm font-medium ${getStatusTextColor(project.status)}`}>
+                  {t(`status.${project.status}`)}
+                </span>
+              </div>
+              {/* Live Status Indicator for all projects with liveUrl */}
+              {project.liveUrl && <LiveStatusIndicator url={project.liveUrl} />}
             </div>
           </div>
           <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-4 w-full sm:w-auto">
