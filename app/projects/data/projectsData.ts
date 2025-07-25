@@ -32,7 +32,7 @@ export const projectsData: Project[] = [
     media: [
       {
         type: "video",
-        src: "/Video/TrailerMyRPG.mp4?height=400&width=600",
+        src: "https://youtu.be/mEzrT54HUJE",
         thumbnail: "/screenshot/myRPG.1.svg?height=400&width=600",
         alt: "MyRPG Trailer",
       },

@@ -46,6 +46,7 @@ export default function MediaModal({ media, currentIndex, isOpen, onClose, proje
 
   const currentMedia = media[activeIndex]
   const isVideo = currentMedia?.type === "video"
+  const isYouTube = isVideo && (currentMedia.src.includes("youtube.com") || currentMedia.src.includes("youtu.be"))
   const videoRef = useRef<HTMLVideoElement>(null)
   const imageRef = useRef<HTMLImageElement>(null)
 
@@ -121,7 +122,17 @@ export default function MediaModal({ media, currentIndex, isOpen, onClose, proje
     }
 
     const handleWheel = (e: WheelEvent) => {
-      if (!isOpen || isVideo) return
+      if (!isOpen) return
+      
+      // Pour les iframes YouTube, toujours empêcher le scroll
+      if (isYouTube) {
+        e.preventDefault()
+        e.stopPropagation()
+        return
+      }
+      
+      // Pour les images, permettre le zoom
+      if (isVideo) return
       e.preventDefault()
 
       if (e.deltaY < 0) {
@@ -133,18 +144,28 @@ export default function MediaModal({ media, currentIndex, isOpen, onClose, proje
 
     if (isOpen) {
       document.addEventListener("keydown", handleKeyDown)
-      if (!isVideo) {
-        document.addEventListener("wheel", handleWheel, { passive: false })
-      }
+      // Toujours ajouter le gestionnaire de wheel pour empêcher le scroll
+      document.addEventListener("wheel", handleWheel, { passive: false })
       document.body.style.overflow = "hidden"
+      
+      // Pour les iframes YouTube, empêcher aussi les événements tactiles
+      if (isYouTube) {
+        const handleTouchMove = (e: TouchEvent) => {
+          e.preventDefault()
+        }
+        document.addEventListener("touchmove", handleTouchMove, { passive: false })
+      }
     }
 
     return () => {
       document.removeEventListener("keydown", handleKeyDown)
       document.removeEventListener("wheel", handleWheel)
+      if (isYouTube) {
+        document.removeEventListener("touchmove", (e) => e.preventDefault())
+      }
       document.body.style.overflow = "unset"
     }
-  }, [isOpen, activeIndex, isVideo])
+  }, [isOpen, activeIndex, isVideo, isYouTube])
 
   const goToNext = () => {
     setActiveIndex((prev) => (prev + 1) % media.length)
@@ -297,6 +318,12 @@ export default function MediaModal({ media, currentIndex, isOpen, onClose, proje
   const handleTouchEnd = () => {
     setIsDragging(false)
   }
+    function extractYoutubeId(url: string): string | null {
+      const match = url.match(
+        /(?:youtube\.com.*(?:\/|v=)|youtu\.be\/)([a-zA-Z0-9_-]{11})/
+      )
+      return match ? match[1] : null
+    }
 
   if (!isOpen) return null
 
@@ -334,6 +361,50 @@ export default function MediaModal({ media, currentIndex, isOpen, onClose, proje
           onClick={(e) => e.stopPropagation()}
         >
           {isVideo ? (
+          isYouTube ? (
+            <div 
+              className="relative w-full h-full max-w-4xl max-h-[80vh] flex items-center justify-center"
+              style={{ pointerEvents: 'auto' }}
+            >
+              <iframe
+                width="100%"
+                height="100%"
+                src={`https://www.youtube.com/embed/${extractYoutubeId(currentMedia.src)}?autoplay=1&rel=0`}
+                title="YouTube video player"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                className="w-full h-full rounded-lg shadow-2xl"
+                scrolling="no"
+                style={{ 
+                  border: 'none',
+                  pointerEvents: 'auto'
+                }}
+              ></iframe>
+              {/* Couche invisible pour gérer les clics mais pas le scroll */}
+              <div 
+                className="absolute inset-0"
+                onMouseDown={(e) => {
+                  // Permettre aux clics de passer à travers
+                  e.currentTarget.style.pointerEvents = 'none'
+                  setTimeout(() => {
+                    e.currentTarget.style.pointerEvents = 'auto'
+                  }, 0)
+                }}
+                onClick={(e) => {
+                  // Permettre aux clics de passer à travers
+                  e.currentTarget.style.pointerEvents = 'none'
+                  setTimeout(() => {
+                    e.currentTarget.style.pointerEvents = 'auto'
+                  }, 0)
+                }}
+                style={{ 
+                  pointerEvents: 'auto',
+                  background: 'transparent',
+                  zIndex: 1
+                }}
+              />
+            </div>
+          ) : (
             <div className="relative w-full h-full max-w-4xl max-h-[80vh] flex items-center justify-center">
               <video
                 ref={videoRef}
@@ -345,9 +416,9 @@ export default function MediaModal({ media, currentIndex, isOpen, onClose, proje
                 onTimeUpdate={handleTimeUpdate}
                 onLoadedMetadata={handleLoadedMetadata}
                 onVolumeChange={(e) => {
-                  const target = e.target as HTMLVideoElement
-                  setVolume(target.volume)
-                  setIsMuted(target.muted)
+                  const target = e.target as HTMLVideoElement;
+                  setVolume(target.volume);
+                  setIsMuted(target.muted);
                 }}
               >
                 {t("modal.videoNotSupported")}
@@ -417,38 +488,39 @@ export default function MediaModal({ media, currentIndex, isOpen, onClose, proje
                 </div>
               </div>
             </div>
-          ) : (
-            <div className="relative flex items-center justify-center w-full h-full">
-              <motion.div
-                className="relative cursor-move select-none flex items-center justify-center"
-                style={{
-                  transform: `scale(${zoom}) translate(${position.x / zoom}px, ${position.y / zoom}px)`,
+          )
+        ) : (
+          <div className="relative flex items-center justify-center w-full h-full">
+            <motion.div
+              className="relative cursor-move select-none flex items-center justify-center"
+              style={{
+                transform: `scale(${zoom}) translate(${position.x / zoom}px, ${position.y / zoom}px)`,
+              }}
+              onMouseDown={handleMouseDown}
+              onMouseMove={handleMouseMove}
+              onMouseUp={handleMouseUp}
+              onMouseLeave={handleMouseUp}
+              onTouchStart={handleTouchStart}
+              onTouchMove={handleTouchMove}
+              onTouchEnd={handleTouchEnd}
+            >
+              <Image
+                ref={imageRef}
+                src={currentMedia.src || "/placeholder.svg"}
+                alt={currentMedia.alt || `${projectTitle} ${t("modal.screenshot")} ${activeIndex + 1}`}
+                width={1200}
+                height={800}
+                className="rounded-lg shadow-2xl object-contain"
+                draggable={false}
+                priority
+                onLoad={(e) => {
+                  const img = e.target as HTMLImageElement;
+                  setImageSize({ width: img.naturalWidth, height: img.naturalHeight });
                 }}
-                onMouseDown={handleMouseDown}
-                onMouseMove={handleMouseMove}
-                onMouseUp={handleMouseUp}
-                onMouseLeave={handleMouseUp}
-                onTouchStart={handleTouchStart}
-                onTouchMove={handleTouchMove}
-                onTouchEnd={handleTouchEnd}
-              >
-                <Image
-                  ref={imageRef}
-                  src={currentMedia.src || "/placeholder.svg"}
-                  alt={currentMedia.alt || `${projectTitle} ${t("modal.screenshot")} ${activeIndex + 1}`}
-                  width={1200}
-                  height={800}
-                  className="rounded-lg shadow-2xl object-contain"
-                  draggable={false}
-                  priority
-                  onLoad={(e) => {
-                    const img = e.target as HTMLImageElement
-                    setImageSize({ width: img.naturalWidth, height: img.naturalHeight })
-                  }}
-                />
-              </motion.div>
-            </div>
-          )}
+              />
+            </motion.div>
+          </div>
+        )}
         </div>
 
         {/* Navigation Arrows */}
