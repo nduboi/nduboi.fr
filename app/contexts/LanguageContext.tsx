@@ -24,7 +24,7 @@ const translations = {
     "hero.title": "Salut, je suis",
     "hero.description1": "Je suis actuellement étudiant à Epitech, spécialisé en développement informatique.",
     "hero.description2":
-      "En dehors de mes études, j'aime la natation, la plongée sous-marine et explorer l'univers spatial.",
+      "En dehors de mes études, j'aime la natation, la course à pied, la plongée sous-marine et explorer l'univers spatial.",
 
     // Projects Section
     "projects.title": "Mes Projets",
@@ -244,7 +244,7 @@ const translations = {
     // Hero Section
     "hero.title": "Hi, I'm",
     "hero.description1": "I'm currently a student at Epitech, specializing in computer development.",
-    "hero.description2": "Outside my studies, I enjoy swimming, scuba diving, and exploring the space world.",
+    "hero.description2": "Outside my studies, I enjoy swimming, running, scuba diving, and exploring the space world.",
 
     // Projects Section
     "projects.title": "My Projects",
