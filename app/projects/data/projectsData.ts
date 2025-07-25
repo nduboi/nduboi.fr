@@ -1,3 +1,10 @@
+export interface MediaItem {
+  type: "image" | "video"
+  src: string
+  thumbnail?: string
+  alt?: string
+}
+
 export interface Project {
   id: number
   title: string
@@ -6,7 +13,7 @@ export interface Project {
   technologies: string[]
   githubUrl: string
   liveUrl?: string
-  images: string[]
+  media: MediaItem[]
   featuresKey: string[]
   challengesKey: string[]
   learningsKey: string[]
@@ -20,18 +27,30 @@ export const projectsData: Project[] = [
     title: "MyRPG",
     descriptionKey: "project.myrpg.description",
     longDescriptionKey: "project.myrpg.longDescription",
-    technologies: ["C", "CSFML", "Linux"],
+    technologies: ["C", "CSFML", "Makefile", "Gaming", "Linux"],
     githubUrl: "https://github.com/nduboi/MyRPG",
-    images: [
-      "/placeholder.svg?height=400&width=600",
-      "/placeholder.svg?height=400&width=600",
-      "/placeholder.svg?height=400&width=600",
-      "/placeholder.svg?height=400&width=600",
-      "/placeholder.svg?height=400&width=600",
-      "/placeholder.svg?height=400&width=600",
-      "/placeholder.svg?height=400&width=600",
-      "/placeholder.svg?height=400&width=600",
-      "/placeholder.svg?height=400&width=600",
+    media: [
+      {
+        type: "video",
+        src: "/Video/TrailerMyRPG.mp4?height=400&width=600",
+        thumbnail: "/screenshot/myRPG.1.svg?height=400&width=600",
+        alt: "MyRPG Trailer",
+      },
+      {
+        type: "image",
+        src: "/screenshot/myRPG.2.svg?height=400&width=600",
+        alt: "MyRPG Main Menu",
+      },
+      {
+        type: "image",
+        src: "/screenshot/myRPG.3.svg?height=400&width=600",
+        alt: "MyRPG combat system",
+      },
+      {
+        type: "image",
+        src: "/screenshot/myRPG.4.svg?height=400&width=600",
+        alt: "MyRPG inventory",
+      },
     ],
     featuresKey: [
       "project.myrpg.feature1",
@@ -75,10 +94,32 @@ export const projectsData: Project[] = [
       "Linux",
     ],
     githubUrl: "https://github.com/nduboi/Arcade",
-    images: [
-      "/placeholder.svg?height=400&width=600",
-      "/placeholder.svg?height=400&width=600",
-      "/placeholder.svg?height=400&width=600",
+    media: [
+      {
+        type: "image",
+        src: "/screenshot/arcade.1.svg?height=400&width=600",
+        alt: "Arcade main interface",
+      },
+      {
+        type: "image",
+        src: "/screenshot/arcade.2.svg?height=400&width=600",
+        alt: "Arcade game selection",
+      },
+            {
+        type: "image",
+        src: "/screenshot/arcade.3.svg?height=400&width=600",
+        alt: "Arcade main interface",
+      },
+      {
+        type: "image",
+        src: "/screenshot/arcade.4.svg?height=400&width=600",
+        alt: "Arcade game selection",
+      },
+            {
+        type: "image",
+        src: "/screenshot/arcade.5.svg?height=400&width=600",
+        alt: "Arcade main interface",
+      },
     ],
     featuresKey: [
       "project.arcade.feature1",
@@ -103,15 +144,62 @@ export const projectsData: Project[] = [
   },
   {
     id: 3,
+    title: "Gnu Krell Monitors",
+    descriptionKey: "project.gnu_krell_monitors.description",
+    longDescriptionKey: "project.gnu_krell_monitors.longDescription",
+    technologies: ["C++", "SFML", "Ncurses", "OS Manager", "Linux"],
+    githubUrl: "https://github.com/nduboi/Gnu-Krell-Monitors",
+    media: [
+      {
+        type: "image",
+        src: "/screenshot/gnu_krell_monitors.1.svg?height=400&width=600",
+        alt: "Gnu Krell Monitors interface SFML",
+      },
+      {
+        type: "image",
+        src: "/screenshot/gnu_krell_monitors.2.svg?height=400&width=600",
+        alt: "Gnu Krell Monitors command Ncurses",
+      },
+    ],
+    featuresKey: [
+      "project.gnu_krell_monitors.feature1",
+      "project.gnu_krell_monitors.feature2",
+      "project.gnu_krell_monitors.feature3",
+      "project.gnu_krell_monitors.feature4",
+      "project.gnu_krell_monitors.feature5",
+    ],
+    challengesKey: [
+      "project.gnu_krell_monitors.challenge1",
+      "project.gnu_krell_monitors.challenge2",
+      "project.gnu_krell_monitors.challenge3",
+      "project.gnu_krell_monitors.challenge4",
+    ],
+    learningsKey: [
+      "project.gnu_krell_monitors.learning1",
+      "project.gnu_krell_monitors.learning2",
+      "project.gnu_krell_monitors.learning3",
+      "project.gnu_krell_monitors.learning4",
+    ],
+    status: "finished",
+  },
+  {
+    id: 4,
     title: "42sh",
     descriptionKey: "project.42sh.description",
     longDescriptionKey: "project.42sh.longDescription",
     technologies: ["C", "Shell Scripting", "Linux"],
     githubUrl: "https://github.com/nduboi/42sh",
-    images: [
-      "/placeholder.svg?height=400&width=600",
-      "/placeholder.svg?height=400&width=600",
-      "/placeholder.svg?height=400&width=600",
+    media: [
+      {
+        type: "image",
+        src: "/screenshot/42sh.1.svg?height=400&width=600",
+        alt: "42sh terminal interface",
+      },
+      {
+        type: "image",
+        src: "/screenshot/42sh.2.svg?height=400&width=600",
+        alt: "42sh command execution",
+      },
     ],
     featuresKey: [
       "project.42sh.feature1",
@@ -142,7 +230,7 @@ export const projectsData: Project[] = [
     ],
   },
   {
-    id: 4,
+    id: 5,
     title: "Truth or Dare",
     descriptionKey: "project.truthordare.description",
     longDescriptionKey: "project.truthordare.longDescription",
@@ -160,7 +248,28 @@ export const projectsData: Project[] = [
     ],
     githubUrl: "https://github.com/nduboi/Truth-or-Dare",
     liveUrl: "https://av.nduboi.fr",
-    images: ["/placeholder.svg?height=400&width=200", "/placeholder.svg?height=400&width=300"],
+    media: [
+      {
+        type: "image",
+        src: "/screenshot/truthordare.1.svg?height=400&width=200",
+        alt: "Truth or Dare menu",
+      },
+      {
+        type: "image",
+        src: "/screenshot/truthordare.2.svg?height=400&width=200",
+        alt: "Truth or Dare add a player",
+      },
+      {
+        type: "image",
+        src: "/screenshot/truthordare.3.svg?height=400&width=200",
+        alt: "Truth or Dare truth or dare",
+      },
+      {
+        type: "image",
+        src: "/screenshot/truthordare.4.svg?height=400&width=200",
+        alt: "Truth or Dare question",
+      },
+    ],
     featuresKey: [
       "project.truthordare.feature1",
       "project.truthordare.feature2",
@@ -186,16 +295,33 @@ export const projectsData: Project[] = [
     status: "inProgress",
   },
   {
-    id: 5,
+    id: 6,
     title: "Multichat",
     descriptionKey: "project.multichat.description",
     longDescriptionKey: "project.multichat.longDescription",
     technologies: ["NodeJS", "SocketIO", "Networking", "RTMP"],
     githubUrl: "https://github.com/nduboi/Multichat",
-    images: [
-      "/placeholder.svg?height=400&width=600",
-      "/placeholder.svg?height=400&width=600",
-      "/placeholder.svg?height=400&width=600",
+    media: [
+      {
+        type: "image",
+        src: "/screenshot/multichat.1.svg?height=400&width=600",
+        alt: "Multichat interface",
+      },
+      {
+        type: "image",
+        src: "/screenshot/multichat.2.svg?height=400&width=600",
+        alt: "Multichat real-time communication init",
+      },
+      {
+        type: "image",
+        src: "/screenshot/multichat.3.svg?height=400&width=600",
+        alt: "Multichat RTMP streaming",
+      },
+      {
+        type: "image",
+        src: "/screenshot/multichat.4.svg?height=400&width=600",
+        alt: "Multichat RTMP streaming",
+      },
     ],
     featuresKey: [
       "project.multichat.feature1",
@@ -230,14 +356,26 @@ export const projectsData: Project[] = [
     ],
   },
   {
-    id: 6,
+    id: 7,
     title: "Nduboi.fr",
     descriptionKey: "project.nduboi.description",
     longDescriptionKey: "project.nduboi.longDescription",
     technologies: ["React", "TypeScript", "TailwindCSS", "NextJS"],
     githubUrl: "https://github.com/nduboi/nduboi.fr",
     liveUrl: "https://nduboi.fr",
-    images: ["/placeholder.svg?height=400&width=600", "/placeholder.svg?height=400&width=600"],
+    media: [
+      {
+        type: "image",
+        src: "/screenshot/nduboi.fr.1.svg?height=400&width=600",
+        alt: "Nduboi.fr img 1",
+      },
+      {
+        type: "image",
+        src: "/screenshot/nduboi.fr.2.svg?height=400&width=600",
+        thumbnail: "/placeholder.svg?height=400&width=600",
+        alt: "Nduboi.fr img 2",
+      },
+    ],
     featuresKey: [
       "project.nduboi.feature1",
       "project.nduboi.feature2",

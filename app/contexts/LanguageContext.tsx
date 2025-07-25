@@ -24,7 +24,7 @@ const translations = {
     "hero.title": "Salut, je suis",
     "hero.description1": "Je suis actuellement étudiant à Epitech, spécialisé en développement informatique.",
     "hero.description2":
-      "En dehors de mes études, j'aime la natation, la course à pied, la plongée sous-marine et explorer l'univers spatial.",
+      "En dehors de mes études, j'aime la natation, la plongée sous-marine et explorer l'univers spatial.",
 
     // Projects Section
     "projects.title": "Mes Projets",
@@ -37,10 +37,34 @@ const translations = {
     "projects.toImprove": "À Améliorer",
     "projects.viewSite": "Voir le site",
 
+    // Media Modal
+    "modal.close": "Fermer",
+    "modal.navigate": "Naviguer",
+    "modal.zoom": "Zoomer",
+    "modal.pan": "Déplacer (quand zoomé)",
+    "modal.reset": "Réinitialiser",
+    "modal.zoomIn": "Zoomer",
+    "modal.zoomOut": "Dézoomer",
+    "modal.play": "Lire",
+    "modal.pause": "Pause",
+    "modal.mute": "Couper le son",
+    "modal.unmute": "Activer le son",
+    "modal.fullscreen": "Plein écran",
+    "modal.video": "Vidéo",
+    "modal.screenshot": "Capture d'écran",
+    "modal.videoNotSupported": "Votre navigateur ne supporte pas la lecture vidéo.",
+    "modal.help.close": "ESC : Fermer",
+    "modal.help.navigate": "←→ : Naviguer",
+    "modal.help.zoom": "Molette : Zoomer",
+    "modal.help.pan": "Glisser : Déplacer (quand zoomé)",
+    "modal.help.playPause": "Espace : Lire/Pause",
+    "modal.help.mute": "M : Couper/Activer le son",
+
     // Project Descriptions
     "project.myrpg.description": "Un jeu RPG complet développé avec CSFML pour Linux",
     "project.arcade.description":
       "Une application où vous pouvez changer les bibliothèques d'affichage et les jeux en cours d'exécution",
+    "project.gnu_krell_monitors.description": "Un logiciel de surveillance de moniteurs GNU Krell",
     "project.42sh.description": "Un shell développé en C pour Linux",
     "project.truthordare.description": "Un jeu d'action ou vérité complet pour les soirées en ligne",
     "project.multichat.description": "Un projet manipulant les sockets et protocoles comme RTMP",
@@ -104,6 +128,23 @@ const translations = {
     "project.arcade.learning2": "Gestion des bibliothèques dynamiques",
     "project.arcade.learning3": "Architecture de plugins",
     "project.arcade.learning4": "Intégration de multiples APIs graphiques",
+
+    // GNU Krell Monitors Project
+    "project.gnu_krell_monitors.longDescription":
+      "Gnu Krell Monitors est un outil de surveillance système léger et modulaire, inspiré de GKrellM, mais conçu avec une approche minimaliste en C pour une efficacité maximale. Ce projet vise à fournir une solution de monitoring en temps réel des ressources système (CPU, mémoire, processus, etc.) via une interface textuelle interactive, en exploitant la bibliothèque ncurses pour un affichage clair et réactif.",
+    "project.gnu_krell_monitors.feature1": "Surveillance en temps réel des ressources système",
+    "project.gnu_krell_monitors.feature2": "Interface textuelle interactive avec ncurses",
+    "project.gnu_krell_monitors.feature3": "Modularité pour l'ajout de nouveaux plugins",
+    "project.gnu_krell_monitors.feature4": "Affichage clair et réactif des ressources système",
+    "project.gnu_krell_monitors.feature5": "Support de multiples thèmes et configurations",
+    "project.gnu_krell_monitors.challenge1": "Récuperation des données du PC via du C++",
+    "project.gnu_krell_monitors.challenge2": "Implémentation d'une interface utilisateur réactive avec ncurses",
+    "project.gnu_krell_monitors.challenge3": "Changement dynamique des bibliothèques graphiques SFML ou ncurses",
+    "project.gnu_krell_monitors.challenge4": "Optimisation des performances pour le monitoring en temps réel",
+    "project.gnu_krell_monitors.learning1": "Programmation système en C++ (Gestion d'interfaces)",
+    "project.gnu_krell_monitors.learning2": "Utilisation de ncurses pour les interfaces textuelles",
+    "project.gnu_krell_monitors.learning3": "Architecture modulaire pour les plugins",
+    "project.gnu_krell_monitors.learning4": "Changement dynamique de bibliothèques graphiques",
 
     // 42sh Project
     "project.42sh.longDescription":
@@ -203,7 +244,7 @@ const translations = {
     // Hero Section
     "hero.title": "Hi, I'm",
     "hero.description1": "I'm currently a student at Epitech, specializing in computer development.",
-    "hero.description2": "Outside my studies, I enjoy swimming, running, scuba diving, and exploring the space world.",
+    "hero.description2": "Outside my studies, I enjoy swimming, scuba diving, and exploring the space world.",
 
     // Projects Section
     "projects.title": "My Projects",
@@ -216,9 +257,33 @@ const translations = {
     "projects.toImprove": "To Improve",
     "projects.viewSite": "View Site",
 
+    // Media Modal
+    "modal.close": "Close",
+    "modal.navigate": "Navigate",
+    "modal.zoom": "Zoom",
+    "modal.pan": "Pan (when zoomed)",
+    "modal.reset": "Reset",
+    "modal.zoomIn": "Zoom In",
+    "modal.zoomOut": "Zoom Out",
+    "modal.play": "Play",
+    "modal.pause": "Pause",
+    "modal.mute": "Mute",
+    "modal.unmute": "Unmute",
+    "modal.fullscreen": "Fullscreen",
+    "modal.video": "Video",
+    "modal.screenshot": "Screenshot",
+    "modal.videoNotSupported": "Your browser does not support video playback.",
+    "modal.help.close": "ESC: Close",
+    "modal.help.navigate": "←→: Navigate",
+    "modal.help.zoom": "Scroll: Zoom",
+    "modal.help.pan": "Drag: Pan (when zoomed)",
+    "modal.help.playPause": "Space: Play/Pause",
+    "modal.help.mute": "M: Mute/Unmute",
+
     // Project Descriptions
     "project.myrpg.description": "A complete RPG game with CSFML for Linux",
     "project.arcade.description": "An application where you can change display-lib and game on run-time",
+    "project.gnu_krell_monitors.description": "A monitoring tool for GNU Krell monitors",
     "project.42sh.description": "A shell with C for Linux",
     "project.truthordare.description": "A full true or dare game for online parties",
     "project.multichat.description": "A project that manipulates socket and other protocols like RTMP",
@@ -282,6 +347,22 @@ const translations = {
     "project.arcade.learning2": "Dynamic library management",
     "project.arcade.learning3": "Plugin architecture",
     "project.arcade.learning4": "Multiple graphics APIs integration",
+
+    // GNU Krell Monitors Project
+    "project.gnu_krell_monitors.longDescription": "Gnu Krell Monitors is a lightweight and modular system monitoring tool, inspired by GKrellM but designed with a minimalist approach in C for maximum efficiency. This project aims to provide a real-time system resource monitoring solution (CPU, memory, processes, etc.) through an interactive text-based interface, leveraging the ncurses library for clear and responsive display.",
+    "project.gnu_krell_monitors.feature1": "Real-time system resource monitoring",
+    "project.gnu_krell_monitors.feature2": "Interactive text-based interface with ncurses",
+    "project.gnu_krell_monitors.feature3": "Modularity for adding new plugins",
+    "project.gnu_krell_monitors.feature4": "Clear and responsive display of system resources",
+    "project.gnu_krell_monitors.feature5": "Support for multiple themes and configurations",
+    "project.gnu_krell_monitors.challenge1": "Retrieving PC data via C++",
+    "project.gnu_krell_monitors.challenge2": "Implementing a responsive user interface with ncurses",
+    "project.gnu_krell_monitors.challenge3": "Dynamic switching of graphics libraries SFML or ncurses",
+    "project.gnu_krell_monitors.challenge4": "Performance optimization for real-time monitoring",
+    "project.gnu_krell_monitors.learning1": "System programming in C++ (Interface management)",
+    "project.gnu_krell_monitors.learning2": "Using ncurses for text-based interfaces",
+    "project.gnu_krell_monitors.learning3": "Modular architecture for plugins",
+    "project.gnu_krell_monitors.learning4": " Dynamic switching of graphical libraries",
 
     // 42sh Project
     "project.42sh.longDescription":
