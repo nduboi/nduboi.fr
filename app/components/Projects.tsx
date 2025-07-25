@@ -33,35 +33,7 @@ const projects = [
       "Nibbler",
       "Linux",
     ],
-  },
-  {
-    id: 3,
-    title: "42sh",
-    descriptionKey: "project.42sh.description",
-    url: "https://github.com/nduboi/42sh",
-    tech: ["C", "Shell Scripting", "Linux"],
-  },
-  {
-    id: 4,
-    title: "Truth or Dare",
-    descriptionKey: "project.truthordare.description",
-    url: "https://github.com/nduboi/Truth-or-Dare",
-    tech: ["NodeJS", "HTML", "TailwindCSS", "SQL", "SocketIO", "Next.js", "API", "React", "TypeScript", "Docker"],
-  },
-  {
-    id: 5,
-    title: "Multichat",
-    descriptionKey: "project.multichat.description",
-    url: "https://github.com/nduboi/Multichat",
-    tech: ["NodeJS", "SocketIO", "Networking", "RTMP"],
-  },
-  {
-    id: 6,
-    title: "Nduboi.fr",
-    descriptionKey: "project.nduboi.description",
-    url: "https://github.com/nduboi/nduboi.fr",
-    tech: ["React", "TypeScript", "TailwindCSS", "NextJS"],
-  },
+  }
 ]
 
 function TechScrollContainer({ tech }: { tech: string[] }) {
