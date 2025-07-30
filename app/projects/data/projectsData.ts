@@ -231,6 +231,39 @@ export const projectsData: Project[] = [
   },
   {
     id: 5,
+    title: "Weserver CPP",
+    descriptionKey: "project.weservercpp.description",
+    longDescriptionKey: "project.weservercpp.longDescription",
+    technologies: ["C++", "Boost", "Networking"],
+    githubUrl: "https://github.com/nduboi/WebserverCPP",
+    media: [
+      {
+        type: "image",
+        src: "/screenshot/webserver.1.svg?height=400&width=600",
+        alt: "Webserver CPP img 1",
+      },
+    ],
+    featuresKey: [
+      "project.weservercpp.feature1",
+      "project.weservercpp.feature2",
+      "project.weservercpp.feature3",
+    ],
+    challengesKey: [
+      "project.weservercpp.challenge1",
+      "project.weservercpp.challenge2",
+      "project.weservercpp.challenge3",
+      "project.weservercpp.challenge4",
+      "project.weservercpp.challenge5",
+    ],
+    learningsKey: [
+      "project.weservercpp.learning1",
+      "project.weservercpp.learning2",
+      "project.weservercpp.learning3",
+    ],
+    status: "inProgress",
+  },
+  {
+    id: 6,
     title: "Truth or Dare",
     descriptionKey: "project.truthordare.description",
     longDescriptionKey: "project.truthordare.longDescription",
@@ -295,7 +328,7 @@ export const projectsData: Project[] = [
     status: "inProgress",
   },
   {
-    id: 6,
+    id: 7,
     title: "Multichat",
     descriptionKey: "project.multichat.description",
     longDescriptionKey: "project.multichat.longDescription",
@@ -356,7 +389,7 @@ export const projectsData: Project[] = [
     ],
   },
   {
-    id: 7,
+    id: 8,
     title: "Nduboi.fr",
     descriptionKey: "project.nduboi.description",
     longDescriptionKey: "project.nduboi.longDescription",

@@ -69,6 +69,7 @@ const translations = {
     "project.truthordare.description": "Un jeu d'action ou vérité complet pour les soirées en ligne",
     "project.multichat.description": "Un projet manipulant les sockets et protocoles comme RTMP",
     "project.nduboi.description": "Un portfolio personnel utilisant des technologies modernes",
+    "project.weservercpp.description": "Un serveur web développé en C++",
 
     // Contact Section
     "contact.title": "Compétences & Contact",
@@ -233,6 +234,21 @@ const translations = {
     "project.nduboi.learning3": "Animations avec Framer Motion",
     "project.nduboi.learning4": "Optimisation web et SEO",
     "project.nduboi.learning5": "Design UX/UI moderne",
+
+    "project.weservercpp.longDescription":
+      "Un projet de serveur web en C++ qui implémente un serveur HTTP simple avec support pour la diffusion de fichiers statiques, CGI et routage basique. Ce projet est conçu pour apprendre les fondamentaux de l'architecture des serveurs web et de la programmation en C++.",
+    "project.weservercpp.feature1": "Implémentation simple de serveur HTTP",
+    "project.weservercpp.feature2": "Diffusion de fichiers statiques",
+    "project.weservercpp.feature3": "Support CGI",
+    "project.weservercpp.challenge1": "Gestion des connexions concurrentes",
+    "project.weservercpp.challenge2": "Implémentation du parsing des requêtes",
+    "project.weservercpp.challenge3": "Gestion de la diffusion de fichiers statiques",
+    "project.weservercpp.challenge4": "Implémentation du routage basique",
+    "project.weservercpp.challenge5": "Gestion des réponses d'erreur",
+    "project.weservercpp.learning1": "Compréhension du protocole HTTP",
+    "project.weservercpp.learning2": "Exploration des bibliothèques de mise en réseau en C++",
+    "project.weservercpp.learning3": "Gestion des entrées/sorties en C++",
+
   },
   en: {
     // Navigation
@@ -287,7 +303,8 @@ const translations = {
     "project.42sh.description": "A shell with C for Linux",
     "project.truthordare.description": "A full true or dare game for online parties",
     "project.multichat.description": "A project that manipulates socket and other protocols like RTMP",
-    "project.nduboi.description": "A personal portfolio, using modern techno.",
+    "project.nduboi.description": "A personal portfolio, using modern technologies.",
+    "project.weservercpp.description": "A web server developed in C++",
 
     // Contact Section
     "contact.title": "Skills & Contact",
@@ -451,6 +468,32 @@ const translations = {
     "project.nduboi.learning3": "Animations with Framer Motion",
     "project.nduboi.learning4": "Web optimization and SEO",
     "project.nduboi.learning5": "Modern UX/UI design",
+
+
+    "project.weservercpp.longDescription":
+      "A C++ web server project that implements a simple HTTP server with support for static file serving, CGI, and basic routing. This project is designed to learn the fundamentals of web server architecture and C++ programming.",
+    "project.weservercpp.feature1":
+      "Simple HTTP server implementation",
+    "project.weservercpp.feature2":
+      "Static file serving",
+    "project.weservercpp.feature3":
+      "CGI support",
+    "project.weservercpp.challenge1":
+      "Handling concurrent connections",
+    "project.weservercpp.challenge2":
+      "Implementing request parsing",
+    "project.weservercpp.challenge3":
+      "Managing static file serving",
+    "project.weservercpp.challenge4":
+      "Implementing basic routing",
+    "project.weservercpp.challenge5":
+      "Handling error responses",
+    "project.weservercpp.learning1":
+      "Understanding HTTP protocol",
+    "project.weservercpp.learning2":
+      "Exploring C++ networking libraries",
+    "project.weservercpp.learning3":
+      "Input/output management in C++",
   },
 }
 
