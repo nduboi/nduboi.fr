@@ -1,7 +1,8 @@
 "use client"
 import Image from "next/image"
 import { motion } from "framer-motion"
-import { FaGithub, FaLinkedin, FaInstagram } from "react-icons/fa"
+import { FaGithub, FaLinkedin, FaInstagram, FaBuyL } from "react-icons/fa"
+import { SiBuymeacoffee } from "react-icons/si";
 import { useLanguage } from "../contexts/LanguageContext"
 
 export default function Hero() {
@@ -25,7 +26,8 @@ export default function Hero() {
             {[
               { icon: FaGithub, link: "https://github.com/nduboi" },
               { icon: FaLinkedin, link: "https://www.linkedin.com/in/noa-roussiere-0613052a1" },
-              { icon: FaInstagram, link: "https://www.instagram.com/nduboiii" },
+              { icon: FaInstagram, link: "https://www.instagram.com/noa.roussiere/" },
+              { icon: SiBuymeacoffee, link: "https://www.buymeacoffee.com/nduboi" }
             ].map((social, index) => (
               <motion.a
                 key={index}
