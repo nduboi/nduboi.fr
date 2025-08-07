@@ -85,7 +85,7 @@ export default function Projects() {
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-white dark:bg-gray-700 rounded-xl shadow-lg overflow-hidden border border-gray-200 dark:border-gray-600 flex flex-col hover:shadow-xl transition-shadow duration-300"
+              className="bg-white dark:bg-gray-700 rounded-xl shadow-lg border border-gray-200 dark:border-gray-600 flex flex-col hover:shadow-xl transition-shadow duration-300"
             >
               <div className="p-6 flex flex-col flex-grow">
                 <h3 className="text-2xl font-semibold mb-2 text-gray-800 dark:text-gray-200">{project.title}</h3>
