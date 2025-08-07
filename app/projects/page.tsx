@@ -1,5 +1,5 @@
 "use client"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import ProjectHeader from "./components/ProjectHeader"
 import Footer from "../components/Footer"
 import ProjectSidebar from "./components/ProjectSidebar"
@@ -10,6 +10,30 @@ import { useLanguage } from "../contexts/LanguageContext"
 export default function ProjectsPage() {
   const [selectedProject, setSelectedProject] = useState(projectsData[0])
   const { t } = useLanguage()
+
+  // S'assurer que le scroll fonctionne
+  useEffect(() => {
+    const forceScrollEnabled = () => {
+      document.body.style.overflow = "auto"
+      document.body.style.paddingRight = "0px"
+      document.body.style.height = "auto"
+    }
+
+    // Forcer immédiatement
+    forceScrollEnabled()
+
+    // Vérifier périodiquement et corriger si nécessaire
+    const interval = setInterval(() => {
+      if (document.body.style.overflow === 'hidden') {
+        forceScrollEnabled()
+      }
+    }, 100)
+
+    return () => {
+      clearInterval(interval)
+      forceScrollEnabled()
+    }
+  }, [])
 
   return (
     <div className="min-h-screen bg-gray-100 dark:bg-gray-900">
