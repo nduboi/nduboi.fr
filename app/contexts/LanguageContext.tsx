@@ -35,6 +35,7 @@ const translations = {
     "projects.myProjects": "Mes Projets",
     "projects.myTrips": "Mes Voyages",
     "projects.overview": "Aperçu du projet",
+    "trip.overview": "Aperçu du voyage",
     "projects.features": "Fonctionnalités",
     "projects.challenges": "Défis",
     "projects.learnings": "Apprentissages",
@@ -253,6 +254,7 @@ const translations = {
     "project.weservercpp.learning2": "Exploration des bibliothèques de mise en réseau en C++",
     "project.weservercpp.learning3": "Gestion des entrées/sorties en C++",
 
+    "trip.robocar.description": "Un projet de voiture autonome utilisant des technologies avancées d'IA et de vision par ordinateur. Pour ce voyage depart le dimanche de la gare de Nantes vers la gare Paris Montparnasse, à la suite, de ce voyage, j'ai pris le metro vers la chambre d'hotel, et j'ai profité d'être sur Paris pour faire un petit footing afin de découvrir la ville, et de me rendre à la Tour Eiffel... Le lendemain reveil au orores, nous etions attendu a 7h sur le campus d'epitech Paris, nous allions au circuit de L'UTAC de Montlhery nous avons visiter le site, et nous avons eu une présentation d'un concours organizer par L'UTAC. Nous avons aussi eu la chance de faire des tours dans l'anneau de vitesse. Nous sommes rentrée sur Epitech Paris et nous avons attaquer la fin du projet Robocar, nous avons traversé une nuit blanche pour travailler sur la projet, et nous avons pus présenter le projet le lendemain matin. Nous sommes après rentrée dans l'après midi.",
   },
   en: {
     // Navigation
@@ -275,6 +277,7 @@ const translations = {
     "projects.myProjects": "My Projects",
     "projects.myTrips": "My Trips",
     "projects.overview": "Project Overview",
+    "trip.overview": "Trip Overview",
     "projects.features": "Features",
     "projects.challenges": "Challenges",
     "projects.learnings": "Learnings",
@@ -502,7 +505,8 @@ const translations = {
       "Exploring C++ networking libraries",
     "project.weservercpp.learning3":
       "Input/output management in C++",
-      "trip.robocar.description": "Un projet de voiture autonome utilisant des technologies avancées d'IA et de vision par ordinateur. Pour ce voyage depart le dimanche de la gare de Nantes vers la gare Paris Montparnasse, à la suite, de ce voyage, j'ai pris le metro vers la chambre d'hotel, et j'ai profité d'être sur Paris pour faire un petit footing afin de découvrir la ville, et de me rendre à la Tour Eiffel... Le lendemain reveil au orores, nous etions attendu a 7h sur le campus d'epitech Paris, nous allions au circuit de L'UTAC de Montlhery nous avons visiter le site, et nous avons eu une présentation d'un concours organizer par L'UTAC. Nous avons aussi eu la chance de faire des tours dans l'anneau de vitesse. Nous sommes rentrée sur Epitech Paris et nous avons attaquer la fin du projet Robocar, nous avons traversé une nuit blanche pour travailler sur la projet, et nous avons pus présenter le projet le lendemain matin. Nous sommes après rentrée dans l'après midi.",
+
+    "trip.robocar.description": "A self-driving car project using advanced AI and computer vision technologies. For this trip, I left on Sunday from Nantes train station to Paris Montparnasse station. After the train ride, I took the metro to the hotel room and took advantage of being in Paris to go for a short run to explore the city and visit the Eiffel Tower... The next day, we woke up at dawn — we were expected at 7 AM on the Epitech Paris campus. We were heading to the UTAC circuit in Montlhéry, where we visited the site and attended a presentation about a competition organized by UTAC. We also had the chance to do a few laps around the high-speed ring. We then returned to Epitech Paris and got to work on finishing the Robocar project. We pulled an all-nighter to work on it and were able to present the project the following morning. We headed back home in the afternoon.",
   },
 }
 
