@@ -18,6 +18,9 @@ const translations = {
     "nav.about": "À propos",
     "nav.projects": "Projets",
     "nav.contact": "Contact",
+    "nav.about-href": "#about",
+    "nav.projects-href": "/projects",
+    "nav.contact-href": "#contact",
     "nav.back": "Retour",
 
     // Hero Section
@@ -30,6 +33,7 @@ const translations = {
     "projects.title": "Mes Projets",
     "projects.viewAll": "Voir tous mes projets",
     "projects.myProjects": "Mes Projets",
+    "projects.myTrips": "Mes Voyages",
     "projects.overview": "Aperçu du projet",
     "projects.features": "Fonctionnalités",
     "projects.challenges": "Défis",
@@ -255,6 +259,9 @@ const translations = {
     "nav.about": "About",
     "nav.projects": "Projects",
     "nav.contact": "Contact",
+    "nav.about-href": "#about",
+    "nav.projects-href": "/projects",
+    "nav.contact-href": "#contact",
     "nav.back": "Back",
 
     // Hero Section
@@ -266,6 +273,7 @@ const translations = {
     "projects.title": "My Projects",
     "projects.viewAll": "See all my projects",
     "projects.myProjects": "My Projects",
+    "projects.myTrips": "My Trips",
     "projects.overview": "Project Overview",
     "projects.features": "Features",
     "projects.challenges": "Challenges",
@@ -494,6 +502,7 @@ const translations = {
       "Exploring C++ networking libraries",
     "project.weservercpp.learning3":
       "Input/output management in C++",
+      "trip.robocar.description": "Un projet de voiture autonome utilisant des technologies avancées d'IA et de vision par ordinateur. Pour ce voyage depart le dimanche de la gare de Nantes vers la gare Paris Montparnasse, à la suite, de ce voyage, j'ai pris le metro vers la chambre d'hotel, et j'ai profité d'être sur Paris pour faire un petit footing afin de découvrir la ville, et de me rendre à la Tour Eiffel... Le lendemain reveil au orores, nous etions attendu a 7h sur le campus d'epitech Paris, nous allions au circuit de L'UTAC de Montlhery nous avons visiter le site, et nous avons eu une présentation d'un concours organizer par L'UTAC. Nous avons aussi eu la chance de faire des tours dans l'anneau de vitesse. Nous sommes rentrée sur Epitech Paris et nous avons attaquer la fin du projet Robocar, nous avons traversé une nuit blanche pour travailler sur la projet, et nous avons pus présenter le projet le lendemain matin. Nous sommes après rentrée dans l'après midi.",
   },
 }
 

@@ -60,7 +60,7 @@ export default function Header() {
             {["about", "projects", "contact"].map((item) => (
               <motion.a
                 key={item}
-                href={`#${item}`}
+                href={t(`nav.${item}-href`)}
                 className="text-gray-800 dark:text-gray-200 hover:text-yellow-500 dark:hover:text-yellow-500 transition-colors"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
