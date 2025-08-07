@@ -1,5 +1,5 @@
 "use client"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { motion } from "framer-motion"
 import {
   FaGithub,
@@ -51,6 +51,42 @@ export default function ProjectDetails({ project }: ProjectDetailsProps) {
   const { t } = useLanguage()
   const [modalOpen, setModalOpen] = useState(false)
   const [selectedMediaIndex, setSelectedMediaIndex] = useState(0)
+
+  // S'assurer que le scroll n'est pas bloqué au chargement
+  useEffect(() => {
+    const forceScrollEnabled = () => {
+      document.body.style.overflow = "auto"
+      document.body.style.paddingRight = "0px"
+      document.body.style.height = "auto"
+    }
+
+    // Forcer immédiatement
+    forceScrollEnabled()
+
+    // Observer pour détecter les changements de style sur le body
+    const observer = new MutationObserver((mutations) => {
+      mutations.forEach((mutation) => {
+        if (mutation.type === 'attributes' && mutation.attributeName === 'style') {
+          const bodyStyle = document.body.style
+          if (bodyStyle.overflow === 'hidden') {
+            forceScrollEnabled()
+          }
+        }
+      })
+    })
+
+    // Observer le body pour les changements de style
+    observer.observe(document.body, {
+      attributes: true,
+      attributeFilter: ['style']
+    })
+
+    // Nettoyer l'observer au démontage
+    return () => {
+      observer.disconnect()
+      forceScrollEnabled()
+    }
+  }, [])
 
   // Determine if we have improvements to show
   const hasImprovements =
