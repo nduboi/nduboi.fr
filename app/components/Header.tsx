@@ -57,7 +57,7 @@ export default function Header() {
 
           {/* Desktop Menu */}
           <div className="hidden md:flex space-x-6 items-center">
-            {["about", "projects", "contact"].map((item) => (
+            {["about", "projects", "trips", "contact"].map((item) => (
               <motion.a
                 key={item}
                 href={t(`nav.${item}-href`)}
