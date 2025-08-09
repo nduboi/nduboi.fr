@@ -25,12 +25,35 @@ export const tripsData: Trip[] = [
     descriptionKey: "trip.robocar.description",
     labels: ["Paris", "Epitech", "Robocar", "AI", "Jetson Nano"],
     media: [
-      /*{
+    {
+        type: "image",
+        src: "/screenshot/tripRobocarParis1.svg",
+        alt: "Eiffel Tower",
+      },
+      {
         type: "video",
-        src: "https://youtu.be/mEzrT54HUJE",
-        thumbnail: "/screenshot/myRPG.1.svg?height=400&width=600",
-        alt: "MyRPG Trailer",
-      }*/
+        src: "/videos/tripRobocarParis2.mp4",
+        thumbnail: "/screenshot/tripRobocarParis2-1.png",
+        alt: "Course Robocar TEK 2 - Paris - 1",
+      },
+      {
+        type: "video",
+        src: "/videos/tripRobocarParis3.mp4",
+        thumbnail: "/screenshot/tripRobocarParis3-1.png",
+        alt: "Course Robocar TEK 2 - Paris - 2",
+      },
+      {
+        type: "video",
+        src: "/videos/tripRobocarParis4.mp4",
+        thumbnail: "/screenshot/tripRobocarParis4-1.png",
+        alt: "Course Robocar TEK 2 - Paris - 3",
+      },
+      {
+        type: "video",
+        src: "/videos/tripRobocarParis5.mp4",
+        thumbnail: "/screenshot/tripRobocarParis5-1.png",
+        alt: "Course Robocar TEK 2 - Paris - 4",
+      }
     ],
     dateStart: "2023-06-30",
     dateEnd: "2023-07-01",
