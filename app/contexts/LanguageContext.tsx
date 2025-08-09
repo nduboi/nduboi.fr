@@ -17,9 +17,11 @@ const translations = {
     // Navigation
     "nav.about": "À propos",
     "nav.projects": "Projets",
+    "nav.trips": "Voyages",
     "nav.contact": "Contact",
     "nav.about-href": "#about",
     "nav.projects-href": "/projects",
+    "nav.trips-href": "/trips",
     "nav.contact-href": "#contact",
     "nav.back": "Retour",
 
@@ -260,9 +262,11 @@ const translations = {
     // Navigation
     "nav.about": "About",
     "nav.projects": "Projects",
+    "nav.trips": "Trips",
     "nav.contact": "Contact",
     "nav.about-href": "#about",
     "nav.projects-href": "/projects",
+    "nav.trips-href": "/trips",
     "nav.contact-href": "#contact",
     "nav.back": "Back",
 
