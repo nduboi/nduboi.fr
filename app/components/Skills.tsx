@@ -15,8 +15,7 @@ import {
   SiDocker,
   SiAnsible,
   SiTerraform,
-  SiJenkins,
-  SiSwift,
+  SiJenkins
 } from "react-icons/si"
 import { useLanguage } from "../contexts/LanguageContext"
 
@@ -29,7 +28,6 @@ const skillCategories = [
       { name: "JavaScript", icon: SiJavascript, color: "text-yellow-500" },
       { name: "TypeScript", icon: SiTypescript, color: "text-blue-500" },
       { name: "Python", icon: SiPython, color: "text-yellow-600" },
-      { name: "Swift", icon: SiSwift, color: "text-orange-500" },
     ],
   },
   {
