@@ -1,5 +1,9 @@
 import type React from "react"
 import type { Metadata } from "next"
+import { NextIntlClientProvider } from "next-intl"
+import { getMessages } from "next-intl/server"
+import { notFound } from "next/navigation"
+import { routing } from "@/i18n/routing"
 import ClientLayout from "./ClientLayout"
 
 export const metadata: Metadata = {
@@ -35,8 +39,8 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/",
     languages: {
-      "fr-FR": "/",
-      "en-US": "/",
+      "fr-FR": "/fr",
+      "en-US": "/en",
     },
   },
   openGraph: {
@@ -90,16 +94,30 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-    generator: 'v0.app'
 }
 
-export default function RootLayout({
+export function generateStaticParams() {
+  return routing.locales.map((locale) => ({ locale }))
+}
+
+export default async function RootLayout({
   children,
+  params: { locale },
 }: {
   children: React.ReactNode
+  params: { locale: string }
 }) {
-  return <ClientLayout>{children}</ClientLayout>
+  // Ensure that the incoming `locale` is valid
+  if (!routing.locales.includes(locale as any)) {
+    notFound()
+  }
+
+  // Providing all messages to the client
+  const messages = await getMessages()
+
+  return (
+    <NextIntlClientProvider messages={messages}>
+      <ClientLayout locale={locale}>{children}</ClientLayout>
+    </NextIntlClientProvider>
+  )
 }
-
-
-import './globals.css'

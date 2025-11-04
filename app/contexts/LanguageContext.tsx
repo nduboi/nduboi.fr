@@ -31,6 +31,9 @@ const translations = {
     "hero.description2":
       "En dehors de mes études, j'aime la natation, la course à pied, la plongée sous-marine et explorer l'univers spatial.",
 
+    // Experience Section
+    "experience.title": "Expérience Professionnelle",
+
     // Projects Section
     "projects.title": "Mes Projets",
     "projects.viewAll": "Voir tous mes projets",
@@ -81,8 +84,12 @@ const translations = {
     // Contact Section
     "contact.title": "Compétences & Contact",
     "contact.skills": "Technologies & Outils",
+    "contact.category.languages": "Langages",
+    "contact.category.frameworks": "Frameworks & Bibliothèques",
+    "contact.category.devops": "DevOps & Outils",
     "contact.stayConnected": "Restons connectés",
     "contact.email": "Email",
+    "contact.downloadCV": "Télécharger mon CV",
     "contact.collaboration": "💼 Collaboration",
     "contact.collaborationText": "Intéressé par une collaboration ou un projet ? N'hésitez pas à me contacter !",
     "contact.github": "Mes projets et contributions",
@@ -256,7 +263,8 @@ const translations = {
     "project.weservercpp.learning2": "Exploration des bibliothèques de mise en réseau en C++",
     "project.weservercpp.learning3": "Gestion des entrées/sorties en C++",
 
-    "trip.robocar.description": "Un projet de voiture autonome utilisant des technologies avancées d’IA et de vision par ordinateur Pour ce voyage, je suis parti le dimanche de la gare de Nantes vers la gare Paris-Montparnasse. À la suite de ce trajet, j’ai pris le métro jusqu’à la chambre d’hôtel, et j’ai profité d’être à Paris pour faire un petit footing afin de découvrir la ville et de me rendre à la Tour Eiffel.Le lendemain, réveil aux aurores : nous étions attendus à 7 h sur le campus d’Epitech Paris. Nous nous sommes ensuite rendus au circuit de l’UTAC de Montlhéry, où nous avons visité le site et assisté à une présentation d’un concours organisé par l’UTAC. Nous avons également eu la chance de faire quelques tours dans l’anneau de vitesse.De retour à Epitech Paris, nous avons attaqué la dernière partie du projet Robocar. Nous avons passé une nuit blanche à travailler sur le projet et avons pu le présenter le lendemain matin. Nous sommes ensuite rentrés dans l’après-midi.",
+    "trip.robocar.description":
+      "Un projet de voiture autonome utilisant des technologies avancées d’IA et de vision par ordinateur Pour ce voyage, je suis parti le dimanche de la gare de Nantes vers la gare Paris-Montparnasse. À la suite de ce trajet, j’ai pris le métro jusqu’à la chambre d’hôtel, et j’ai profité d’être à Paris pour faire un petit footing afin de découvrir la ville et de me rendre à la Tour Eiffel.Le lendemain, réveil aux aurores : nous étions attendus à 7 h sur le campus d’Epitech Paris. Nous nous sommes ensuite rendus au circuit de l’UTAC de Montlhéry, où nous avons visité le site et assisté à une présentation d’un concours organisé par l’UTAC. Nous avons également eu la chance de faire quelques tours dans l’anneau de vitesse.De retour à Epitech Paris, nous avons attaqué la dernière partie du projet Robocar. Nous avons passé une nuit blanche à travailler sur le projet et avons pu le présenter le lendemain matin. Nous sommes ensuite rentrés dans l’après-midi.",
   },
   en: {
     // Navigation
@@ -274,6 +282,9 @@ const translations = {
     "hero.title": "Hi, I'm",
     "hero.description1": "I'm currently a student at Epitech, specializing in computer development.",
     "hero.description2": "Outside my studies, I enjoy swimming, running, scuba diving, and exploring the space world.",
+
+    // Experience Section
+    "experience.title": "Professional Experience",
 
     // Projects Section
     "projects.title": "My Projects",
@@ -324,8 +335,12 @@ const translations = {
     // Contact Section
     "contact.title": "Skills & Contact",
     "contact.skills": "Technologies & Tools",
+    "contact.category.languages": "Languages",
+    "contact.category.frameworks": "Frameworks & Libraries",
+    "contact.category.devops": "DevOps & Tools",
     "contact.stayConnected": "Let's stay connected",
     "contact.email": "Email",
+    "contact.downloadCV": "Download my CV",
     "contact.collaboration": "💼 Collaboration",
     "contact.collaborationText": "Interested in a collaboration or project? Feel free to contact me!",
     "contact.github": "My projects and contributions",
@@ -381,7 +396,8 @@ const translations = {
     "project.arcade.learning4": "Multiple graphics APIs integration",
 
     // GNU Krell Monitors Project
-    "project.gnu_krell_monitors.longDescription": "Gnu Krell Monitors is a lightweight and modular system monitoring tool, inspired by GKrellM but designed with a minimalist approach in C for maximum efficiency. This project aims to provide a real-time system resource monitoring solution (CPU, memory, processes, etc.) through an interactive text-based interface, leveraging the ncurses library for clear and responsive display.",
+    "project.gnu_krell_monitors.longDescription":
+      "Gnu Krell Monitors is a lightweight and modular system monitoring tool, inspired by GKrellM but designed with a minimalist approach in C for maximum efficiency. This project aims to provide a real-time system resource monitoring solution (CPU, memory, processes, etc.) through an interactive text-based interface, leveraging the ncurses library for clear and responsive display.",
     "project.gnu_krell_monitors.feature1": "Real-time system resource monitoring",
     "project.gnu_krell_monitors.feature2": "Interactive text-based interface with ncurses",
     "project.gnu_krell_monitors.feature3": "Modularity for adding new plugins",
@@ -394,7 +410,7 @@ const translations = {
     "project.gnu_krell_monitors.learning1": "System programming in C++ (Interface management)",
     "project.gnu_krell_monitors.learning2": "Using ncurses for text-based interfaces",
     "project.gnu_krell_monitors.learning3": "Modular architecture for plugins",
-    "project.gnu_krell_monitors.learning4": " Dynamic switching of graphical libraries",
+    "project.gnu_krell_monitors.learning4": "Dynamic switching of graphical libraries",
 
     // 42sh Project
     "project.42sh.longDescription":
@@ -484,33 +500,22 @@ const translations = {
     "project.nduboi.learning4": "Web optimization and SEO",
     "project.nduboi.learning5": "Modern UX/UI design",
 
-
     "project.weservercpp.longDescription":
       "A C++ web server project that implements a simple HTTP server with support for static file serving, CGI, and basic routing. This project is designed to learn the fundamentals of web server architecture and C++ programming.",
-    "project.weservercpp.feature1":
-      "Simple HTTP server implementation",
-    "project.weservercpp.feature2":
-      "Static file serving",
-    "project.weservercpp.feature3":
-      "CGI support",
-    "project.weservercpp.challenge1":
-      "Handling concurrent connections",
-    "project.weservercpp.challenge2":
-      "Implementing request parsing",
-    "project.weservercpp.challenge3":
-      "Managing static file serving",
-    "project.weservercpp.challenge4":
-      "Implementing basic routing",
-    "project.weservercpp.challenge5":
-      "Handling error responses",
-    "project.weservercpp.learning1":
-      "Understanding HTTP protocol",
-    "project.weservercpp.learning2":
-      "Exploring C++ networking libraries",
-    "project.weservercpp.learning3":
-      "Input/output management in C++",
+    "project.weservercpp.feature1": "Simple HTTP server implementation",
+    "project.weservercpp.feature2": "Static file serving",
+    "project.weservercpp.feature3": "CGI support",
+    "project.weservercpp.challenge1": "Handling concurrent connections",
+    "project.weservercpp.challenge2": "Implementing request parsing",
+    "project.weservercpp.challenge3": "Managing static file serving",
+    "project.weservercpp.challenge4": "Implementing basic routing",
+    "project.weservercpp.challenge5": "Handling error responses",
+    "project.weservercpp.learning1": "Understanding HTTP protocol",
+    "project.weservercpp.learning2": "Exploring C++ networking libraries",
+    "project.weservercpp.learning3": "Input/output management in C++",
 
-    "trip.robocar.description": "A self-driving car project using advanced AI and computer vision technologies. For this trip, I left on Sunday from Nantes train station to Paris Montparnasse station. After the train ride, I took the metro to the hotel room and took advantage of being in Paris to go for a short run to explore the city and visit the Eiffel Tower... The next day, we woke up at dawn — we were expected at 7 AM on the Epitech Paris campus. We were heading to the UTAC circuit in Montlhéry, where we visited the site and attended a presentation about a competition organized by UTAC. We also had the chance to do a few laps around the high-speed ring. We then returned to Epitech Paris and got to work on finishing the Robocar project. We pulled an all-nighter to work on it and were able to present the project the following morning. We headed back home in the afternoon.",
+    "trip.robocar.description":
+      "A self-driving car project using advanced AI and computer vision technologies. For this trip, I left on Sunday from Nantes train station to Paris Montparnasse station. After the train ride, I took the metro to the hotel room and took advantage of being in Paris to go for a short run to explore the city and visit the Eiffel Tower... The next day, we woke up at dawn — we were expected at 7 AM on the Epitech Paris campus. We were heading to the UTAC circuit in Montlhéry, where we visited the site and attended a presentation about a competition organized by UTAC. We also had the chance to do a few laps around the high-speed ring. We then returned to Epitech Paris and got to work on finishing the Robocar project. We pulled an all-nighter to work on it and were able to present the project the following morning. We headed back home in the afternoon.",
   },
 }
 

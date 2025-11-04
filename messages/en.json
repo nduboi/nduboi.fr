@@ -1,0 +1,253 @@
+{
+  "nav": {
+    "about": "About",
+    "projects": "Projects",
+    "trips": "Trips",
+    "contact": "Contact",
+    "about-href": "#about",
+    "projects-href": "/projects",
+    "trips-href": "/trips",
+    "contact-href": "#contact",
+    "back": "Back"
+  },
+  "hero": {
+    "title": "Hi, I'm",
+    "description1": "I'm currently a student at Epitech, specializing in computer development.",
+    "description2": "Outside my studies, I enjoy swimming, running, scuba diving, and exploring the space world."
+  },
+  "experience": {
+    "title": "Professional Experience"
+  },
+  "projects": {
+    "title": "My Projects",
+    "viewAll": "See all my projects",
+    "myProjects": "My Projects",
+    "myTrips": "My Trips",
+    "overview": "Project Overview",
+    "features": "Features",
+    "challenges": "Challenges",
+    "learnings": "Learnings",
+    "toImprove": "To Improve",
+    "viewSite": "View Site"
+  },
+  "trip": {
+    "overview": "Trip Overview"
+  },
+  "modal": {
+    "close": "Close",
+    "navigate": "Navigate",
+    "zoom": "Zoom",
+    "pan": "Pan (when zoomed)",
+    "reset": "Reset",
+    "zoomIn": "Zoom In",
+    "zoomOut": "Zoom Out",
+    "play": "Play",
+    "pause": "Pause",
+    "mute": "Mute",
+    "unmute": "Unmute",
+    "fullscreen": "Fullscreen",
+    "video": "Video",
+    "screenshot": "Screenshot",
+    "videoNotSupported": "Your browser does not support video playback.",
+    "help": {
+      "close": "ESC: Close",
+      "navigate": "←→: Navigate",
+      "zoom": "Scroll: Zoom",
+      "pan": "Drag: Pan (when zoomed)",
+      "playPause": "Space: Play/Pause",
+      "mute": "M: Mute/Unmute"
+    }
+  },
+  "project": {
+    "myrpg": {
+      "description": "A complete RPG game with CSFML for Linux",
+      "longDescription": "MyRPG is a complete role-playing game developed in C with the CSFML library. This project represents several months of development and includes a combat system, inventory management, quest system, and a fully customized graphical interface.",
+      "feature1": "Turn-based combat system",
+      "feature2": "Advanced inventory management",
+      "feature3": "Dynamic quest system",
+      "feature4": "Intuitive graphical interface",
+      "feature5": "Game save and load functionality",
+      "challenge1": "Graphics performance optimization",
+      "challenge2": "Memory management in C",
+      "challenge3": "Modular code architecture",
+      "challenge4": "Precise collision system",
+      "learning1": "Graphics programming with CSFML",
+      "learning2": "Advanced memory management",
+      "learning3": "Video game architecture",
+      "learning4": "Performance optimization"
+    },
+    "arcade": {
+      "description": "An application where you can change display-lib and game on run-time",
+      "longDescription": "Arcade is an ambitious project that allows dynamic switching of graphics libraries and games during runtime. This project demonstrates advanced modular architecture with support for multiple graphics libraries and games.",
+      "feature1": "Dynamic graphics library switching",
+      "feature2": "Multiple game support",
+      "feature3": "Modular architecture with plugins",
+      "feature4": "Adaptive user interface",
+      "feature5": "Persistent scoring system",
+      "challenge1": "Dynamic library management",
+      "challenge2": "Flexible plugin architecture",
+      "challenge3": "Cross-platform compatibility",
+      "challenge4": "Different graphics format handling",
+      "learning1": "Advanced object-oriented programming",
+      "learning2": "Dynamic library management",
+      "learning3": "Plugin architecture",
+      "learning4": "Multiple graphics APIs integration"
+    },
+    "gnu_krell_monitors": {
+      "description": "A monitoring tool for GNU Krell monitors",
+      "longDescription": "Gnu Krell Monitors is a lightweight and modular system monitoring tool, inspired by GKrellM but designed with a minimalist approach in C for maximum efficiency. This project aims to provide a real-time system resource monitoring solution (CPU, memory, processes, etc.) through an interactive text-based interface, leveraging the ncurses library for clear and responsive display.",
+      "feature1": "Real-time system resource monitoring",
+      "feature2": "Interactive text-based interface with ncurses",
+      "feature3": "Modularity for adding new plugins",
+      "feature4": "Clear and responsive display of system resources",
+      "feature5": "Support for multiple themes and configurations",
+      "challenge1": "Retrieving PC data via C++",
+      "challenge2": "Implementing a responsive user interface with ncurses",
+      "challenge3": "Dynamic switching of graphics libraries SFML or ncurses",
+      "challenge4": "Performance optimization for real-time monitoring",
+      "learning1": "System programming in C++ (Interface management)",
+      "learning2": "Using ncurses for text-based interfaces",
+      "learning3": "Modular architecture for plugins",
+      "learning4": "Dynamic switching of graphical libraries"
+    },
+    "42sh": {
+      "description": "A shell with C for Linux",
+      "longDescription": "42sh is a complete implementation of a Unix shell in C. This project reproduces the main functionalities of bash, including command execution, pipe management, redirections, and environment variables.",
+      "feature1": "System command execution",
+      "feature2": "Pipe and redirection management",
+      "feature3": "Environment variables",
+      "feature4": "Command history",
+      "feature5": "Basic auto-completion",
+      "challenge1": "Complex command parsing",
+      "challenge2": "Child process management",
+      "challenge3": "Pipe implementation",
+      "challenge4": "System signal handling",
+      "learning1": "System programming in C",
+      "learning2": "Unix process management",
+      "learning3": "Parsing and lexical analysis",
+      "learning4": "Unix shell architecture",
+      "improvement1": "Add alias support",
+      "improvement2": "Improve auto-completion",
+      "improvement3": "Implement persistent history",
+      "improvement4": "Add syntax highlighting",
+      "improvement5": "Optimize parsing performance"
+    },
+    "truthordare": {
+      "description": "A full true or dare game for online parties",
+      "longDescription": "Truth or Dare is an interactive web application designed to liven up parties with friends. The application offers customizable challenges, a point system, and a modern, responsive interface with real-time multiplayer support.",
+      "feature1": "Modern and responsive user interface",
+      "feature2": "Customizable challenges by category",
+      "feature3": "Point system and leaderboards",
+      "feature4": "Real-time multiplayer mode",
+      "feature5": "Extensible challenge database",
+      "feature6": "Authentication system",
+      "challenge1": "Real-time multiplayer synchronization",
+      "challenge2": "Intuitive user interface",
+      "challenge3": "User session management",
+      "challenge4": "Mobile and responsive optimization",
+      "challenge5": "Docker deployment",
+      "learning1": "Modern full-stack web development",
+      "learning2": "REST API architecture",
+      "learning3": "WebSockets and real-time communication",
+      "learning4": "Deployment and containerization",
+      "learning5": "Modern user interface design"
+    },
+    "multichat": {
+      "description": "A project that manipulates socket and other protocols like RTMP",
+      "longDescription": "Multichat is an advanced communication application that implements multiple network protocols. The project explores real-time communications, socket management, and integration of protocols like RTMP for streaming.",
+      "feature1": "Real-time multi-user communication",
+      "feature2": "Multi-protocol support (WebSocket, RTMP)",
+      "feature3": "TCP/UDP socket management",
+      "feature4": "RTMP streaming interface",
+      "feature5": "Multi-threaded architecture",
+      "feature6": "Chat room system",
+      "challenge1": "Network protocol implementation",
+      "challenge2": "Concurrency and threading management",
+      "challenge3": "Network performance optimization",
+      "challenge4": "Communication security",
+      "challenge5": "RTMP protocol integration",
+      "learning1": "Advanced network programming",
+      "learning2": "Real-time communication protocols",
+      "learning3": "Distributed architecture",
+      "learning4": "Network performance optimization",
+      "learning5": "Streaming and multimedia protocols",
+      "improvement1": "Add communication encryption",
+      "improvement2": "Implement robust authentication system",
+      "improvement3": "Optimize bandwidth management",
+      "improvement4": "Add support for new protocols",
+      "improvement5": "Improve user interface",
+      "improvement6": "Add message persistence"
+    },
+    "nduboi": {
+      "description": "A personal portfolio, using modern technologies.",
+      "longDescription": "My personal portfolio developed with modern web technologies. This site showcases my projects, skills, and experiences in an interactive and responsive way, with modern design and smooth animations.",
+      "feature1": "Modern and responsive design",
+      "feature2": "Smooth animations with Framer Motion",
+      "feature3": "Automatic dark/light mode",
+      "feature4": "Interactive projects section",
+      "feature5": "Functional contact form",
+      "feature6": "SEO optimization",
+      "challenge1": "Responsive design on all devices",
+      "challenge2": "Performance optimization",
+      "challenge3": "Smooth and natural animations",
+      "challenge4": "Web accessibility",
+      "challenge5": "Deployment and hosting",
+      "learning1": "Next.js framework and modern React",
+      "learning2": "Advanced styling with TailwindCSS",
+      "learning3": "Animations with Framer Motion",
+      "learning4": "Web optimization and SEO",
+      "learning5": "Modern UX/UI design"
+    },
+    "weservercpp": {
+      "description": "A web server developed in C++",
+      "longDescription": "A C++ web server project that implements a simple HTTP server with support for static file serving, CGI, and basic routing. This project is designed to learn the fundamentals of web server architecture and C++ programming.",
+      "feature1": "Simple HTTP server implementation",
+      "feature2": "Static file serving",
+      "feature3": "CGI support",
+      "challenge1": "Handling concurrent connections",
+      "challenge2": "Implementing request parsing",
+      "challenge3": "Managing static file serving",
+      "challenge4": "Implementing basic routing",
+      "challenge5": "Handling error responses",
+      "learning1": "Understanding HTTP protocol",
+      "learning2": "Exploring C++ networking libraries",
+      "learning3": "Input/output management in C++"
+    }
+  },
+  "trip": {
+    "robocar": {
+      "description": "A self-driving car project using advanced AI and computer vision technologies. For this trip, I left on Sunday from Nantes train station to Paris Montparnasse station. After the train ride, I took the metro to the hotel room and took advantage of being in Paris to go for a short run to explore the city and visit the Eiffel Tower... The next day, we woke up at dawn — we were expected at 7 AM on the Epitech Paris campus. We were heading to the UTAC circuit in Montlhéry, where we visited the site and attended a presentation about a competition organized by UTAC. We also had the chance to do a few laps around the high-speed ring. We then returned to Epitech Paris and got to work on finishing the Robocar project. We pulled an all-nighter to work on it and were able to present the project the following morning. We headed back home in the afternoon."
+    }
+  },
+  "contact": {
+    "title": "Skills & Contact",
+    "skills": "Technologies & Tools",
+    "category": {
+      "languages": "Languages",
+      "frameworks": "Frameworks & Libraries",
+      "devops": "DevOps & Tools"
+    },
+    "stayConnected": "Let's stay connected",
+    "email": "Email",
+    "downloadCV": "Download my CV",
+    "collaboration": "💼 Collaboration",
+    "collaborationText": "Interested in a collaboration or project? Feel free to contact me!",
+    "github": "My projects and contributions",
+    "instagram": "Creative projects and inspirations",
+    "twitter": "Tech news and industry insights",
+    "youtube": "Tutorials and project demonstrations"
+  },
+  "footer": {
+    "student": "Epitech Student - Class of 2028",
+    "rights": "All rights reserved."
+  },
+  "status": {
+    "finished": "Finished",
+    "inProgress": "In Progress",
+    "toImprove": "To Improve"
+  },
+  "theme": {
+    "switchToLight": "Switch to Light Mode",
+    "switchToDark": "Switch to Dark Mode"
+  }
+}

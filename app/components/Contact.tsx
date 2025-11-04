@@ -1,153 +1,118 @@
 "use client"
 import { motion } from "framer-motion"
-import { FaGithub, FaInstagram, FaXTwitter, FaYoutube, FaEnvelope } from "react-icons/fa6"
-import {
-  SiC,
-  SiCplusplus,
-  SiJavascript,
-  SiTypescript,
-  SiReact,
-  SiNextdotjs,
-  SiNodedotjs,
-  SiPython,
-  SiLinux,
-  SiGit,
-  SiTailwindcss,
-  SiDocker,
-} from "react-icons/si"
+import { FaGithub, FaInstagram, FaYoutube, FaEnvelope, FaDownload, FaLinkedin } from "react-icons/fa6"
 import { useLanguage } from "../contexts/LanguageContext"
-
-const skills = [
-  { name: "C", icon: SiC, color: "text-blue-600" },
-  { name: "C++", icon: SiCplusplus, color: "text-blue-700" },
-  { name: "JavaScript", icon: SiJavascript, color: "text-yellow-500" },
-  { name: "TypeScript", icon: SiTypescript, color: "text-blue-500" },
-  { name: "React", icon: SiReact, color: "text-cyan-500" },
-  { name: "Next.js", icon: SiNextdotjs, color: "text-gray-800 dark:text-white" },
-  { name: "Node.js", icon: SiNodedotjs, color: "text-green-600" },
-  { name: "Python", icon: SiPython, color: "text-yellow-600" },
-  { name: "Linux", icon: SiLinux, color: "text-gray-800 dark:text-white" },
-  { name: "Git", icon: SiGit, color: "text-orange-600" },
-  { name: "Tailwind", icon: SiTailwindcss, color: "text-cyan-400" },
-  { name: "Docker", icon: SiDocker, color: "text-blue-500" },
-]
 
 export default function Contact() {
   const { t } = useLanguage()
   return (
-    <section id="contact" className="py-20 bg-gray-100 dark:bg-gray-900">
+    <section
+      id="contact"
+      className="py-20 bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800"
+    >
       <div className="container mx-auto px-6">
-        <h2 className="text-4xl font-bold mb-12 text-center text-gray-800 dark:text-gray-200">{t("contact.title")}</h2>
-        <div className="max-w-6xl mx-auto bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden border border-gray-200 dark:border-gray-700">
-          <div className="md:flex">
-            {/* Skills Section */}
-            <div className="md:w-2/3 p-6 lg:p-8 flex flex-col">
-              <h3 className="text-2xl font-semibold mb-6 text-gray-800 dark:text-gray-200">{t("contact.skills")}</h3>
-              <div className="grid grid-cols-3 lg:grid-cols-4 gap-3 flex-1">
-                {skills.map((skill, index) => (
-                  <motion.div
-                    key={skill.name}
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.3, delay: index * 0.05 }}
-                    whileHover={{ scale: 1.05 }}
-                    className="flex flex-col items-center justify-center p-3 rounded-xl bg-gray-50 dark:bg-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 transition-all duration-300 cursor-pointer min-h-[90px] border border-gray-200 dark:border-gray-600"
-                  >
-                    <skill.icon size={36} className={`${skill.color} mb-2`} />
-                    <span className="text-sm font-medium text-gray-800 dark:text-gray-200 text-center leading-tight">
-                      {skill.name}
-                    </span>
-                  </motion.div>
-                ))}
-              </div>
-            </div>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="max-w-4xl mx-auto text-center mb-12"
+        >
+          <h2 className="text-5xl font-bold mb-4 text-gray-800 dark:text-gray-200">{t("contact.stayConnected")}</h2>
+          <p className="text-lg text-gray-600 dark:text-gray-400">{t("contact.collaborationText")}</p>
+        </motion.div>
 
-            {/* Contact Section */}
-            <div className="md:w-1/3 p-6 lg:p-8 bg-gray-50 dark:bg-gray-700 flex flex-col">
-              <h3 className="text-2xl font-semibold mb-6 text-gray-800 dark:text-gray-200">
-                {t("contact.stayConnected")}
-              </h3>
-
-              {/* Email */}
+        <div className="max-w-5xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-6 mb-8">
+            {/* CV Download Card */}
+            <motion.a
+              href="/cv.pdf"
+              download
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4, delay: 0.1 }}
+              whileHover={{ scale: 1.02, y: -5 }}
+              className="bg-gradient-to-br from-yellow-400 to-yellow-600 dark:from-yellow-500 dark:to-yellow-700 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 p-8 flex flex-col items-center justify-center text-white group"
+            >
               <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.3 }}
-                className="mb-6 p-4 bg-white dark:bg-gray-600 rounded-xl shadow-sm border border-gray-200 dark:border-gray-500"
+                whileHover={{ rotate: 360 }}
+                transition={{ duration: 0.6 }}
+                className="bg-white/20 p-4 rounded-full mb-4"
               >
-                <div className="flex items-center">
-                  <FaEnvelope size={20} className="text-yellow-500 mr-3" />
-                  <div>
-                    <span className="text-gray-800 dark:text-gray-200 font-medium block">{t("contact.email")}</span>
-                    <a
-                      href="mailto:noa.roussiere@epitech.eu"
-                      className="text-gray-600 dark:text-gray-400 text-sm hover:text-yellow-500 transition-colors"
-                    >
-                      noa.roussiere@epitech.eu
-                    </a>
-                  </div>
-                </div>
+                <FaDownload size={32} />
               </motion.div>
+              <span className="text-2xl font-bold mb-2">{t("contact.downloadCV")}</span>
+              <span className="text-sm opacity-90">PDF Format</span>
+            </motion.a>
 
-              {/* Social Media */}
-              <div className="space-y-3 flex-1">
-                {[
-                  {
-                    icon: FaGithub,
-                    label: "GitHub",
-                    url: "https://github.com/nduboi",
-                    description: t("contact.github"),
-                  },
-                  {
-                    icon: FaInstagram,
-                    label: "Instagram",
-                    url: "https://www.instagram.com/nduboiii",
-                    description: t("contact.instagram"),
-                  },
-                  {
-                    icon: FaXTwitter,
-                    label: "X (Twitter)",
-                    url: "https://x.com/nduboi",
-                    description: t("contact.twitter"),
-                  },
-                  {
-                    icon: FaYoutube,
-                    label: "YouTube",
-                    url: "https://www.youtube.com/@nduboi",
-                    description: t("contact.youtube"),
-                  },
-                ].map((social, index) => (
-                  <motion.a
-                    key={social.label}
-                    href={social.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-start p-3 rounded-xl bg-white dark:bg-gray-600 shadow-sm hover:shadow-md transition-all duration-300 ease-in-out group border border-gray-200 dark:border-gray-500"
-                    whileHover={{ scale: 1.02 }}
-                    initial={{ opacity: 0, x: 20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.3, delay: index * 0.1 + 0.1 }}
-                  >
-                    <social.icon
-                      size={20}
-                      className="text-yellow-500 mr-3 mt-1 group-hover:scale-110 transition-transform"
-                    />
-                    <div>
-                      <span className="text-gray-800 dark:text-gray-200 font-medium block text-sm">{social.label}</span>
-                      <span className="text-gray-600 dark:text-gray-400 text-xs">{social.description}</span>
-                    </div>
-                  </motion.a>
-                ))}
-              </div>
+            {/* Email Card */}
+            <motion.a
+              href="mailto:noa.roussiere@epitech.eu"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4, delay: 0.2 }}
+              whileHover={{ scale: 1.02, y: -5 }}
+              className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 p-8 flex flex-col items-center justify-center border-2 border-gray-200 dark:border-gray-700 group"
+            >
+              <motion.div
+                whileHover={{ scale: 1.1 }}
+                className="bg-yellow-100 dark:bg-yellow-900/30 p-4 rounded-full mb-4"
+              >
+                <FaEnvelope size={32} className="text-yellow-600 dark:text-yellow-500" />
+              </motion.div>
+              <span className="text-xl font-bold text-gray-800 dark:text-gray-200 mb-2">{t("contact.email")}</span>
+              <span className="text-sm text-gray-600 dark:text-gray-400">noa.roussiere@epitech.eu</span>
+            </motion.a>
+          </div>
 
-              {/* Contact Info */}
-              <div className="mt-4 p-3 bg-white dark:bg-gray-600 rounded-xl border border-gray-200 dark:border-gray-500">
-                <h4 className="text-base font-semibold mb-2 text-gray-800 dark:text-gray-200">
-                  {t("contact.collaboration")}
-                </h4>
-                <p className="text-gray-600 dark:text-gray-400 text-xs">{t("contact.collaborationText")}</p>
-              </div>
-            </div>
+          {/* Social Media Grid */}
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {[
+              {
+                icon: FaGithub,
+                label: "GitHub",
+                url: "https://github.com/nduboi",
+                color: "from-gray-700 to-gray-900 dark:from-gray-600 dark:to-gray-800",
+                iconColor: "text-white",
+              },
+              {
+                icon: FaLinkedin,
+                label: "LinkedIn",
+                url: "https://www.linkedin.com/in/noa-roussiere/",
+                color: "from-blue-500 to-blue-700",
+                iconColor: "text-white",
+              },
+              {
+                icon: FaInstagram,
+                label: "Instagram",
+                url: "https://www.instagram.com/noa.roussiere/",
+                color: "from-pink-500 via-purple-500 to-orange-500",
+                iconColor: "text-white",
+              },
+              {
+                icon: FaYoutube,
+                label: "YouTube",
+                url: "https://www.youtube.com/@nduboi",
+                color: "from-red-500 to-red-700",
+                iconColor: "text-white",
+              },
+            ].map((social, index) => (
+              <motion.a
+                key={social.label}
+                href={social.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.4, delay: 0.3 + index * 0.1 }}
+                whileHover={{ scale: 1.05, y: -5 }}
+                className={`bg-gradient-to-br ${social.color} rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 p-6 flex flex-col items-center justify-center group`}
+              >
+                <motion.div whileHover={{ scale: 1.2, rotate: 5 }} transition={{ duration: 0.3 }}>
+                  <social.icon size={40} className={social.iconColor} />
+                </motion.div>
+                <span className="text-white font-semibold mt-3 text-sm">{social.label}</span>
+              </motion.a>
+            ))}
           </div>
         </div>
       </div>
