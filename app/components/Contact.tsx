@@ -26,7 +26,7 @@ export default function Contact() {
             {/* CV Download Card */}
             <motion.a
               href="/cv.pdf"
-              download
+              download={`NOA_ROUSSIÈRE_STAGE_EPITECH_CV_${new Date().getFullYear()}.pdf`}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: 0.1 }}
