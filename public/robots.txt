@@ -6,4 +6,4 @@ Allow: /
 Host: https://nduboi.fr
 
 # Sitemaps
-Sitemap: https://nduboi.fr/sitemap.xml
+Sitemap: https://nduboi.fr/sitemap-0.xml
