@@ -6,6 +6,7 @@ import {
   SiJavascript,
   SiTypescript,
   SiReact,
+  SiDeno,
   SiNextdotjs,
   SiNodedotjs,
   SiPython,
@@ -15,7 +16,10 @@ import {
   SiDocker,
   SiAnsible,
   SiTerraform,
-  SiJenkins
+  SiJenkins,
+  SiCss3,
+  SiHtml5,
+  SiGithub
 } from "react-icons/si"
 import { useLanguage } from "../contexts/LanguageContext"
 
@@ -28,15 +32,18 @@ const skillCategories = [
       { name: "JavaScript", icon: SiJavascript, color: "text-yellow-500" },
       { name: "TypeScript", icon: SiTypescript, color: "text-blue-500" },
       { name: "Python", icon: SiPython, color: "text-yellow-600" },
+      { name: "HTML", icon: SiHtml5 , color: "text-yellow-600" },
+      { name: "CSS", icon: SiCss3, color: "text-yellow-600" },
     ],
   },
   {
     titleKey: "contact.category.frameworks",
     skills: [
-      { name: "React", icon: SiReact, color: "text-cyan-500" },
-      { name: "Next.js", icon: SiNextdotjs, color: "text-gray-800 dark:text-white" },
       { name: "Node.js", icon: SiNodedotjs, color: "text-green-600" },
-      { name: "Tailwind", icon: SiTailwindcss, color: "text-cyan-400" },
+      { name: "Deno", icon: SiDeno, color: "text-black" },
+      { name: "Next.js", icon: SiNextdotjs, color: "text-gray-800 dark:text-white" },
+      { name: "React", icon: SiReact, color: "text-cyan-500" },
+      { name: "TailwindCSS", icon: SiTailwindcss, color: "text-cyan-400" },
     ],
   },
   {
@@ -47,6 +54,7 @@ const skillCategories = [
       { name: "Terraform", icon: SiTerraform, color: "text-purple-600" },
       { name: "Jenkins", icon: SiJenkins, color: "text-red-500" },
       { name: "Git", icon: SiGit, color: "text-orange-600" },
+      { name: "GitHub", icon: SiGithub, color: "text-black" },
       { name: "Linux", icon: SiLinux, color: "text-gray-800 dark:text-white" },
     ],
   },

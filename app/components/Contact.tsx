@@ -1,6 +1,6 @@
 "use client"
 import { motion } from "framer-motion"
-import { FaGithub, FaInstagram, FaYoutube, FaEnvelope, FaDownload, FaLinkedin } from "react-icons/fa6"
+import { FaGithub, FaInstagram, FaEnvelope, FaDownload, FaLinkedin } from "react-icons/fa6"
 import { useLanguage } from "../contexts/LanguageContext"
 
 export default function Contact() {
@@ -65,7 +65,7 @@ export default function Contact() {
           </div>
 
           {/* Social Media Grid */}
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="grid sm:grid-cols-2 gap-4">
             {[
               {
                 icon: FaGithub,
@@ -79,20 +79,6 @@ export default function Contact() {
                 label: "LinkedIn",
                 url: "https://www.linkedin.com/in/noa-roussiere/",
                 color: "from-blue-500 to-blue-700",
-                iconColor: "text-white",
-              },
-              {
-                icon: FaInstagram,
-                label: "Instagram",
-                url: "https://www.instagram.com/noa.roussiere/",
-                color: "from-pink-500 via-purple-500 to-orange-500",
-                iconColor: "text-white",
-              },
-              {
-                icon: FaYoutube,
-                label: "YouTube",
-                url: "https://www.youtube.com/@nduboi",
-                color: "from-red-500 to-red-700",
                 iconColor: "text-white",
               },
             ].map((social, index) => (
