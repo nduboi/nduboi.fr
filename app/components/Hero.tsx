@@ -18,7 +18,7 @@ export default function Hero() {
           className="md:w-1/2 mb-8 md:mb-0"
         >
           <h1 className="text-5xl font-bold mb-4 text-gray-800 dark:text-gray-200">
-            {t("hero.title")} <span className="text-yellow-500">Nduboi</span>
+            {t("hero.title")} <span className="text-yellow-500">Noa ROUSSIÈRE</span>
           </h1>
           <p className="text-xl mb-6 text-gray-600 dark:text-gray-400">{t("hero.description1")}</p>
           <p className="text-xl mb-6 text-gray-600 dark:text-gray-400">{t("hero.description2")}</p>

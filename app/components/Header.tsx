@@ -51,7 +51,7 @@ export default function Header() {
               href="https://nduboi.fr"
               className="text-2xl font-bold text-gray-800 dark:text-gray-200 hover:text-yellow-500 dark:hover:text-yellow-500 transition-colors"
             >
-              Nduboi
+              Noa ROUSSIÈRE
             </a>
           </motion.div>
 

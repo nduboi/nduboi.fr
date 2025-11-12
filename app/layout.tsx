@@ -4,14 +4,15 @@ import ClientLayout from "./ClientLayout"
 
 export const metadata: Metadata = {
   title: {
-    default: "Nduboi - Portfolio",
-    template: "%s | Nduboi",
+    default: "Noa ROUSSIÈRE - Portfolio",
+    template: "%s | Noa ROUSSIÈRE",
   },
   description:
-    "Portfolio personnel de Noa Roussiere, étudiant Epitech spécialisé en développement informatique. Découvrez mes projets en C, C++, JavaScript, React, Next.js et plus encore.",
+    "Portfolio personnel de Noa Roussière, étudiant Epitech spécialisé en développement informatique. Découvrez mes projets en C, C++, JavaScript, React, Next.js et plus encore.",
   keywords: [
+    "Noa ROUSSIÈRE",
+    "Noa Roussière",
     "Nduboi",
-    "Noa Roussiere",
     "Epitech",
     "Développeur",
     "Portfolio",
@@ -23,9 +24,9 @@ export const metadata: Metadata = {
     "Python",
     "Linux",
   ],
-  authors: [{ name: "Noa Roussiere", url: "https://nduboi.fr" }],
-  creator: "Noa Roussiere",
-  publisher: "Nduboi",
+  authors: [{ name: "Noa Roussière", url: "https://nduboi.fr" }],
+  creator: "Noa Roussière",
+  publisher: "Noa Roussière",
   formatDetection: {
     email: false,
     address: false,
@@ -43,22 +44,22 @@ export const metadata: Metadata = {
     type: "website",
     locale: "fr_FR",
     url: "https://nduboi.fr",
-    title: "Nduboi - Portfolio",
-    description: "Portfolio personnel de Noa Roussiere, étudiant Epitech spécialisé en développement informatique.",
-    siteName: "Nduboi Portfolio",
+    title: "Noa ROUSSIÈRE - Portfolio",
+    description: "Portfolio personnel de Noa ROUSSIÈRE, étudiant Epitech spécialisé en développement informatique.",
+    siteName: "Noa ROUSSIÈRE Portfolio",
     images: [
       {
         url: "/build/img/android-chrome-512x512.png",
         width: 512,
         height: 512,
-        alt: "Nduboi Logo",
+        alt: "Noa ROUSSIÈRE Logo",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Nduboi - Portfolio",
-    description: "Portfolio personnel de Noa Roussiere, étudiant Epitech spécialisé en développement informatique.",
+    title: "Noa ROUSSIÈRE - Portfolio",
+    description: "Portfolio personnel de Noa ROUSSIÈRE, étudiant Epitech spécialisé en développement informatique.",
     creator: "@nduboi",
     images: ["/build/img/android-chrome-512x512.png"],
   },
