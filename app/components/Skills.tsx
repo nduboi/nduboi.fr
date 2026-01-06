@@ -19,7 +19,8 @@ import {
   SiJenkins,
   SiCss3,
   SiHtml5,
-  SiGithub
+  SiGithub,
+  SiRubyonrails
 } from "react-icons/si"
 import { useLanguage } from "../contexts/LanguageContext"
 
@@ -29,6 +30,7 @@ const skillCategories = [
     skills: [
       { name: "C", icon: SiC, color: "text-blue-600" },
       { name: "C++", icon: SiCplusplus, color: "text-blue-700" },
+      { name: "Ruby", icon: SiRubyonrails, color: "text-red-600" },
       { name: "JavaScript", icon: SiJavascript, color: "text-yellow-500" },
       { name: "TypeScript", icon: SiTypescript, color: "text-blue-500" },
       { name: "Python", icon: SiPython, color: "text-yellow-600" },
@@ -44,6 +46,7 @@ const skillCategories = [
       { name: "Next.js", icon: SiNextdotjs, color: "text-gray-800 dark:text-white" },
       { name: "React", icon: SiReact, color: "text-cyan-500" },
       { name: "TailwindCSS", icon: SiTailwindcss, color: "text-cyan-400" },
+      { name: "On Rails", icon: SiRubyonrails, color: "text-red-600" },
     ],
   },
   {
