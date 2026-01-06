@@ -20,6 +20,7 @@ import {
   SiCss3,
   SiHtml5,
   SiGithub,
+  SiRuby,
   SiRubyonrails
 } from "react-icons/si"
 import { useLanguage } from "../contexts/LanguageContext"
@@ -30,7 +31,7 @@ const skillCategories = [
     skills: [
       { name: "C", icon: SiC, color: "text-blue-600" },
       { name: "C++", icon: SiCplusplus, color: "text-blue-700" },
-      { name: "Ruby", icon: SiRubyonrails, color: "text-red-600" },
+      { name: "Ruby", icon: SiRuby, color: "text-red-600" },
       { name: "JavaScript", icon: SiJavascript, color: "text-yellow-500" },
       { name: "TypeScript", icon: SiTypescript, color: "text-blue-500" },
       { name: "Python", icon: SiPython, color: "text-yellow-600" },
