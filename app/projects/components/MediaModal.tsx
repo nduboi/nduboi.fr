@@ -46,7 +46,8 @@ export default function MediaModal({ media, currentIndex, isOpen, onClose, proje
 
   const currentMedia = media[activeIndex]
   const isVideo = currentMedia?.type === "video"
-  const isYouTube = isVideo && (currentMedia.src.includes("youtube.com") || currentMedia.src.includes("youtu.be"))
+  const isGif = currentMedia?.type === "gif"
+  const isYouTube = isVideo && (currentMedia.src?.includes("youtube.com") || currentMedia.src?.includes("youtu.be"))
   const videoRef = useRef<HTMLVideoElement>(null)
   const imageRef = useRef<HTMLImageElement>(null)
 
@@ -59,10 +60,13 @@ export default function MediaModal({ media, currentIndex, isOpen, onClose, proje
 
   // Calculate initial zoom for small images
   useEffect(() => {
-    if (!isVideo && imageRef.current && isOpen) {
+    // Ne pas zoomer les GIFs
+
+    if (!isVideo && !isGif && imageRef.current && isOpen) {
       const img = imageRef.current
       const containerWidth = window.innerWidth - 128 // padding
       const containerHeight = window.innerHeight - 128 // padding
+
 
       // Get natural image dimensions
       const naturalWidth = img.naturalWidth
@@ -84,7 +88,7 @@ export default function MediaModal({ media, currentIndex, isOpen, onClose, proje
         setZoom(finalScale)
       }
     }
-  }, [activeIndex, isVideo, isOpen])
+  }, [activeIndex, isVideo, isGif, isOpen])
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -106,13 +110,13 @@ export default function MediaModal({ media, currentIndex, isOpen, onClose, proje
           break
         case "+":
         case "=":
-          if (!isVideo) zoomIn()
+          if (!isVideo && !isGif) zoomIn()
           break
         case "-":
-          if (!isVideo) zoomOut()
+          if (!isVideo && !isGif) zoomOut()
           break
         case "0":
-          if (!isVideo) resetZoom()
+          if (!isVideo && !isGif) resetZoom()
           break
         case "m":
         case "M":
@@ -132,7 +136,7 @@ export default function MediaModal({ media, currentIndex, isOpen, onClose, proje
       }
       
       // Pour les images, permettre le zoom
-      if (isVideo) return
+      if (isVideo || isGif) return
       e.preventDefault()
 
       if (e.deltaY < 0) {
@@ -165,7 +169,7 @@ export default function MediaModal({ media, currentIndex, isOpen, onClose, proje
       }
       document.body.style.overflow = "unset"
     }
-  }, [isOpen, activeIndex, isVideo, isYouTube])
+  }, [isOpen, activeIndex, isVideo, isYouTube, isGif])
 
   const goToNext = () => {
     setActiveIndex((prev) => (prev + 1) % media.length)
@@ -178,15 +182,15 @@ export default function MediaModal({ media, currentIndex, isOpen, onClose, proje
   }
 
   const zoomIn = () => {
-    if (!isVideo) setZoom((prev) => Math.min(prev * 1.3, 8)) // Increased max zoom for small images
+    if (!isVideo && !isGif) setZoom((prev) => Math.min(prev * 1.3, 8)) // Increased max zoom for small images
   }
 
   const zoomOut = () => {
-    if (!isVideo) setZoom((prev) => Math.max(prev / 1.3, 0.2)) // Allow more zoom out
+    if (!isVideo && !isGif) setZoom((prev) => Math.max(prev / 1.3, 0.2)) // Allow more zoom out
   }
 
   const resetZoom = () => {
-    if (!isVideo && imageSize.width && imageSize.height) {
+    if (!isVideo && !isGif && imageSize.width && imageSize.height) {
       const containerWidth = window.innerWidth - 128
       const containerHeight = window.innerHeight - 128
 
@@ -273,7 +277,7 @@ export default function MediaModal({ media, currentIndex, isOpen, onClose, proje
 
   // Mouse/Touch handlers for images
   const handleMouseDown = (e: React.MouseEvent) => {
-    if (zoom > 1 && !isVideo) {
+    if (zoom > 1 && !isVideo && !isGif) {
       setIsDragging(true)
       setDragStart({
         x: e.clientX - position.x,
@@ -283,7 +287,7 @@ export default function MediaModal({ media, currentIndex, isOpen, onClose, proje
   }
 
   const handleMouseMove = (e: React.MouseEvent) => {
-    if (isDragging && zoom > 1 && !isVideo) {
+    if (isDragging && zoom > 1 && !isVideo && !isGif) {
       setPosition({
         x: e.clientX - dragStart.x,
         y: e.clientY - dragStart.y,
@@ -296,7 +300,7 @@ export default function MediaModal({ media, currentIndex, isOpen, onClose, proje
   }
 
   const handleTouchStart = (e: React.TouchEvent) => {
-    if (zoom > 1 && e.touches.length === 1 && !isVideo) {
+    if (zoom > 1 && e.touches.length === 1 && !isVideo && !isGif) {
       setIsDragging(true)
       setDragStart({
         x: e.touches[0].clientX - position.x,
@@ -306,7 +310,7 @@ export default function MediaModal({ media, currentIndex, isOpen, onClose, proje
   }
 
   const handleTouchMove = (e: React.TouchEvent) => {
-    if (isDragging && zoom > 1 && e.touches.length === 1 && !isVideo) {
+    if (isDragging && zoom > 1 && e.touches.length === 1 && !isVideo && !isGif) {
       e.preventDefault()
       setPosition({
         x: e.touches[0].clientX - dragStart.x,
@@ -517,6 +521,7 @@ export default function MediaModal({ media, currentIndex, isOpen, onClose, proje
                   const img = e.target as HTMLImageElement;
                   setImageSize({ width: img.naturalWidth, height: img.naturalHeight });
                 }}
+                unoptimized={isGif}
               />
             </motion.div>
           </div>
@@ -550,7 +555,7 @@ export default function MediaModal({ media, currentIndex, isOpen, onClose, proje
         )}
 
         {/* Zoom Controls - Only for images */}
-        {!isVideo && (
+        {!isVideo && !isGif && (
           <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex items-center space-x-1 sm:space-x-2 bg-black/50 rounded-full p-1 sm:p-2 z-20">
             <button
               onClick={(e) => {
@@ -631,7 +636,7 @@ export default function MediaModal({ media, currentIndex, isOpen, onClose, proje
               <p>{t("modal.help.playPause")}</p>
               <p>{t("modal.help.mute")}</p>
             </>
-          ) : (
+          ) : isGif ? null : (
             <>
               <p>{t("modal.help.zoom")}</p>
               <p>{t("modal.help.pan")}</p>

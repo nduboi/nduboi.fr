@@ -59,6 +59,40 @@
     }
   },
   "project": {
+    "rtype": {
+      "description": "Modern multiplayer remake of the legendary R-Type arcade game.",
+      "longDescription": "A modern multiplayer remake of the legendary R-Type arcade game, built with cutting-edge C++20 technology and networked gameplay. Features classic arcade action, 4 player co-op, and a custom ECS engine.",
+      "feature1": "Classic R-Type Action & 4 Player Co-op",
+      "feature2": "Real-time networked multiplayer (UDP)",
+      "feature3": "Custom ECS Engine (Entity Component System)",
+      "feature4": "Cross-platform (Windows & Linux)",
+      "feature5": "Wave System & Boss Battles",
+      "challenge1": "Implementing a custom ECS engine",
+      "challenge2": "Low-latency UDP networking for multiplayer",
+      "challenge3": "Cross-platform compatibility (Windows/Linux)",
+      "challenge4": "Real-time performance optimization (60 FPS)",
+      "learning1": "Advanced C++20 programming",
+      "learning2": "Network programming (UDP/TCP)",
+      "learning3": "Entity Component System architecture",
+      "learning4": "Game engine development"
+    },
+    "bashme": {
+      "description": "Stop wasting time writing \"boilerplate\" code in Bash.",
+      "longDescription": "Describe your installation scenario in YAML, bashme generates a robust, interactive, and stylized Shell script. It solves the pain of managing colors, cursors, error handling and user inputs in bash scripts.",
+      "feature1": "Zero Dependencies: Generated .sh runs everywhere",
+      "feature2": "Modern UI: Colors, spinners, auto-formatting",
+      "feature3": "Interactivity: Text and masked password inputs",
+      "feature4": "Conditional Logic & Error Handling",
+      "feature5": "Templating: Reuse variables in commands",
+      "challenge1": "Generating robust Bash code from YAML",
+      "challenge2": "Cross-platform compatibility",
+      "challenge3": "Implementing variable templating",
+      "challenge4": "Creating a standalone Go binary",
+      "learning1": "Go programming and compilation",
+      "learning2": "YAML parsing and processing",
+      "learning3": "Advanced Bash scripting patterns",
+      "learning4": "CLI tool architecture"
+    },
     "myrpg": {
       "description": "A complete RPG game with CSFML for Linux",
       "longDescription": "MyRPG is a complete role-playing game developed in C with the CSFML library. This project represents several months of development and includes a combat system, inventory management, quest system, and a fully customized graphical interface.",

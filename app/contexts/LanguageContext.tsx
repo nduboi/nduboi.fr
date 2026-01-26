@@ -71,6 +71,8 @@ const translations = {
     "modal.help.mute": "M : Couper/Activer le son",
 
     // Project Descriptions
+    "project.bashme.description": "Arrêtez de perdre du temps à écrire du code \"boilerplate\" en Bash.",
+    "project.rtype.description": "Remake multijoueur moderne du légendaire jeu d'arcade R-Type.",
     "project.myrpg.description": "Un jeu RPG complet développé avec CSFML pour Linux",
     "project.arcade.description":
       "Une application où vous pouvez changer les bibliothèques d'affichage et les jeux en cours d'exécution",
@@ -109,6 +111,38 @@ const translations = {
     // Theme
     "theme.switchToLight": "Passer en mode clair",
     "theme.switchToDark": "Passer en mode sombre",
+
+    // Rtype Project
+    "project.rtype.longDescription": "Un remake multijoueur moderne du légendaire jeu d'arcade R-Type, construit avec la technologie C++20 de pointe et un gameplay en réseau. Comprend l'action d'arcade classique, la coopération à 4 joueurs et un moteur ECS personnalisé.",
+    "project.rtype.feature1": "Action R-Type Classique & Co-op à 4 joueurs",
+    "project.rtype.feature2": "Multijoueur en réseau temps réel (UDP)",
+    "project.rtype.feature3": "Moteur ECS personnalisé (Entity Component System)",
+    "project.rtype.feature4": "Multi-plateforme (Windows & Linux)",
+    "project.rtype.feature5": "Système de vagues & Combats de boss",
+    "project.rtype.challenge1": "Implémentation d'un moteur ECS personnalisé",
+    "project.rtype.challenge2": "Réseau UDP à faible latence pour le multijoueur",
+    "project.rtype.challenge3": "Compatibilité multi-plateforme (Windows/Linux)",
+    "project.rtype.challenge4": "Optimisation des performances temps réel (60 FPS)",
+    "project.rtype.learning1": "Programmation C++20 avancée",
+    "project.rtype.learning2": "Programmation réseau (UDP/TCP)",
+    "project.rtype.learning3": "Architecture Entity Component System",
+    "project.rtype.learning4": "Développement de moteur de jeu",
+
+    // Bashme Project
+    "project.bashme.longDescription": "Décrivez votre scénario d'installation en YAML, bashme génère un script Shell robuste, interactif et stylisé. Il résout les problèmes de gestion des couleurs, curseurs, gestion d'erreurs et entrées utilisateur dans les scripts bash.",
+    "project.bashme.feature1": "Zéro Dépendance : Le script .sh généré fonctionne partout",
+    "project.bashme.feature2": "UI Moderne : Couleurs, chargements, formatage auto",
+    "project.bashme.feature3": "Interactivité : Entrées texte et mots de passe masqués",
+    "project.bashme.feature4": "Logique Conditionnelle & Gestion d'erreurs",
+    "project.bashme.feature5": "Templating : Réutilisation des variables",
+    "project.bashme.challenge1": "Génération de code Bash robuste depuis YAML",
+    "project.bashme.challenge2": "Compatibilité multi-plateforme",
+    "project.bashme.challenge3": "Implémentation du templating de variables",
+    "project.bashme.challenge4": "Création d'un binaire autonome en Go",
+    "project.bashme.learning1": "Programmation et compilation Go",
+    "project.bashme.learning2": "Parsing et traitement YAML",
+    "project.bashme.learning3": "Patterns avancés de scripting Bash",
+    "project.bashme.learning4": "Architecture d'outils CLI",
 
     // MyRPG Project
     "project.myrpg.longDescription":
@@ -323,6 +357,8 @@ const translations = {
     "modal.help.mute": "M: Mute/Unmute",
 
     // Project Descriptions
+    "project.bashme.description": "Stop wasting time writing \"boilerplate\" code in Bash.",
+    "project.rtype.description": "Modern multiplayer remake of the legendary R-Type arcade game.",
     "project.myrpg.description": "A complete RPG game with CSFML for Linux",
     "project.arcade.description": "An application where you can change display-lib and game on run-time",
     "project.gnu_krell_monitors.description": "A monitoring tool for GNU Krell monitors",
@@ -360,6 +396,41 @@ const translations = {
     // Theme
     "theme.switchToLight": "Switch to Light Mode",
     "theme.switchToDark": "Switch to Dark Mode",
+
+    // rtype Project
+    "project.rtype.longDescription":
+      "A modern multiplayer remake of the legendary R-Type arcade game, built with cutting-edge C++20 technology and networked gameplay. Features classic arcade action, 4 player co-op, and a custom ECS engine.",
+    "project.rtype.feature1": "Classic R-Type Action & 4 Player Co-op",
+    "project.rtype.feature2": "Real-time networked multiplayer (UDP)",
+    "project.rtype.feature3": "Custom ECS Engine (Entity Component System)",
+    "project.rtype.feature4": "Cross-platform (Windows & Linux)",
+    "project.rtype.feature5": "Wave System & Boss Battles",
+    "project.rtype.challenge1": "Implementing a custom ECS engine",
+    "project.rtype.challenge2": "Low-latency UDP networking for multiplayer",
+    "project.rtype.challenge3": "Cross-platform compatibility (Windows/Linux)",
+    "project.rtype.challenge4": "Real-time performance optimization (60 FPS)",
+    "project.rtype.learning1": "Advanced C++20 programming",
+    "project.rtype.learning2": "Network programming (UDP/TCP)",
+    "project.rtype.learning3": "Entity Component System architecture",
+    "project.rtype.learning4": "Game engine development",
+
+
+    // bashme Project
+    "project.bashme.longDescription":
+      "Describe your installation scenario in YAML, bashme generates a robust, interactive, and stylized Shell script. It solves the pain of managing colors, cursors, error handling and user inputs in bash scripts.",
+    "project.bashme.feature1": "Zero Dependencies: Generated .sh runs everywhere",
+    "project.bashme.feature2": "Modern UI: Colors, spinners, auto-formatting",
+    "project.bashme.feature3": "Interactivity: Text and masked password inputs",
+    "project.bashme.feature4": "Conditional Logic & Error Handling",
+    "project.bashme.feature5": "Templating: Reuse variables in commands",
+    "project.bashme.challenge1": "Generating robust Bash code from YAML",
+    "project.bashme.challenge2": "Cross-platform compatibility",
+    "project.bashme.challenge3": "Implementing variable templating",
+    "project.bashme.challenge4": "Creating a standalone Go binary",
+    "project.bashme.learning1": "Go programming and compilation",
+    "project.bashme.learning2": "YAML parsing and processing",
+    "project.bashme.learning3": "Advanced Bash scripting patterns",
+    "project.bashme.learning4": "CLI tool architecture",
 
     // MyRPG Project
     "project.myrpg.longDescription":

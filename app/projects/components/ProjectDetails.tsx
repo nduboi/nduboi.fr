@@ -189,7 +189,7 @@ export default function ProjectDetails({ project }: ProjectDetailsProps) {
                   onClick={() => openModal(index)}
                 >
                   <Image
-                    src={mediaItem.type === "video" ? mediaItem.thumbnail || mediaItem.src : mediaItem.src}
+                    src={mediaItem.type === "video" ? mediaItem.thumbnail || mediaItem.src : mediaItem.src ? mediaItem.src : ""}
                     alt={mediaItem.alt || `${project.title} ${mediaItem.type} ${index + 1}`}
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-300"
@@ -204,10 +204,15 @@ export default function ProjectDetails({ project }: ProjectDetailsProps) {
                       )}
                     </div>
                   </div>
-                  {/* Video indicator */}
+                  {/* Video/GIF indicator */}
                   {mediaItem.type === "video" && (
                     <div className="absolute top-2 right-2 bg-black/70 text-white px-2 py-1 rounded text-xs font-medium">
                       VIDEO
+                    </div>
+                  )}
+                  {mediaItem.type === "gif" && (
+                    <div className="absolute top-2 right-2 bg-black/70 text-white px-2 py-1 rounded text-xs font-medium">
+                      GIF
                     </div>
                   )}
                 </motion.div>

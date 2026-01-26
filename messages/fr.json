@@ -62,6 +62,40 @@
     }
   },
   "project": {
+    "rtype": {
+      "description": "Remake multijoueur moderne du légendaire jeu d'arcade R-Type.",
+      "longDescription": "Un remake multijoueur moderne du légendaire jeu d'arcade R-Type, construit avec la technologie C++20 de pointe et un gameplay en réseau. Comprend l'action d'arcade classique, la coopération à 4 joueurs et un moteur ECS personnalisé.",
+      "feature1": "Action R-Type Classique & Co-op à 4 joueurs",
+      "feature2": "Multijoueur en réseau temps réel (UDP)",
+      "feature3": "Moteur ECS personnalisé (Entity Component System)",
+      "feature4": "Multi-plateforme (Windows & Linux)",
+      "feature5": "Système de vagues & Combats de boss",
+      "challenge1": "Implémentation d'un moteur ECS personnalisé",
+      "challenge2": "Réseau UDP à faible latence pour le multijoueur",
+      "challenge3": "Compatibilité multi-plateforme (Windows/Linux)",
+      "challenge4": "Optimisation des performances temps réel (60 FPS)",
+      "learning1": "Programmation C++20 avancée",
+      "learning2": "Programmation réseau (UDP/TCP)",
+      "learning3": "Architecture Entity Component System",
+      "learning4": "Développement de moteur de jeu"
+    },
+    "bashme": {
+      "description": "Arrêtez de perdre du temps à écrire du code \"boilerplate\" en Bash.",
+      "longDescription": "Décrivez votre scénario d'installation en YAML, bashme génère un script Shell robuste, interactif et stylisé. Il résout les problèmes de gestion des couleurs, curseurs, gestion d'erreurs et entrées utilisateur dans les scripts bash.",
+      "feature1": "Zéro Dépendance : Le script .sh généré fonctionne partout",
+      "feature2": "UI Moderne : Couleurs, chargements, formatage auto",
+      "feature3": "Interactivité : Entrées texte et mots de passe masqués",
+      "feature4": "Logique Conditionnelle & Gestion d'erreurs",
+      "feature5": "Templating : Réutilisation des variables",
+      "challenge1": "Génération de code Bash robuste depuis YAML",
+      "challenge2": "Compatibilité multi-plateforme",
+      "challenge3": "Implémentation du templating de variables",
+      "challenge4": "Création d'un binaire autonome en Go",
+      "learning1": "Programmation et compilation Go",
+      "learning2": "Parsing et traitement YAML",
+      "learning3": "Patterns avancés de scripting Bash",
+      "learning4": "Architecture d'outils CLI"
+    },
     "myrpg": {
       "description": "Un jeu RPG complet développé avec CSFML pour Linux",
       "longDescription": "MyRPG est un jeu de rôle complet développé en C avec la bibliothèque CSFML. Ce projet représente plusieurs mois de développement et inclut un système de combat, d'inventaire, de quêtes et une interface graphique entièrement personnalisée.",

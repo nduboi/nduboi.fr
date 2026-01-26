@@ -1,6 +1,7 @@
 export interface MediaItem {
-  type: "image" | "video"
-  src: string
+  type: "image" | "video" | "gif"
+  src?: string
+  href?: string
   thumbnail?: string
   alt?: string
 }
@@ -24,6 +25,85 @@ export interface Project {
 export const projectsData: Project[] = [
   {
     id: 1,
+    title: "BashMe",
+    descriptionKey: "project.bashme.description",
+    longDescriptionKey: "project.bashme.longDescription",
+    technologies: ["Go", "Bash", "Yaml", "DevOps", "Linux", "macOS", "Windows", "CLI"],
+    githubUrl: "https://github.com/nduboi/BashMe",
+    media: [
+      {
+        type: "gif",
+        src: "https://github.com/user-attachments/assets/ec303458-5a56-49c2-8f04-187c1c55788d",
+        alt: "BashMe main interface",
+      }
+    ],
+    featuresKey: [
+      "project.bashme.feature1",
+      "project.bashme.feature2",
+      "project.bashme.feature3",
+      "project.bashme.feature4",
+      "project.bashme.feature5",
+    ],
+    challengesKey: [
+      "project.bashme.challenge1",
+      "project.bashme.challenge2",
+      "project.bashme.challenge3",
+      "project.bashme.challenge4",
+    ],
+    learningsKey: [
+      "project.bashme.learning1",
+      "project.bashme.learning2",
+      "project.bashme.learning3",
+      "project.bashme.learning4",
+    ],
+    status: "inProgress",
+  },
+  {
+    id: 2,
+    title: "Rtype",
+    descriptionKey: "project.rtype.description",
+    longDescriptionKey: "project.rtype.longDescription",
+    technologies: [
+      "C++",
+      "Dynamic Library",
+      "CMAKE",
+      "SFML",
+      "Network",
+      "Multiplayer",
+      "Game Development",
+      "ECS",
+    ],
+    githubUrl: "https://github.com/My-Epitech-Organisation/Rtype",
+    media: [
+      // {
+      //   type: "image",
+      //   src: "/screenshot/rtype.1.svg?height=400&width=600",
+      //   alt: "Rtype main interface",
+      // }
+    ],
+    featuresKey: [
+      "project.rtype.feature1",
+      "project.rtype.feature2",
+      "project.rtype.feature3",
+      "project.rtype.feature4",
+      "project.rtype.feature5",
+    ],
+    challengesKey: [
+      "project.rtype.challenge1",
+      "project.rtype.challenge2",
+      "project.rtype.challenge3",
+      "project.rtype.challenge4",
+    ],
+    learningsKey: [
+      "project.rtype.learning1",
+      "project.rtype.learning2",
+      "project.rtype.learning3",
+      "project.rtype.learning4",
+    ],
+    status: "finished", 
+  },
+  {
+    id: 3,
     title: "MyRPG",
     descriptionKey: "project.myrpg.description",
     longDescriptionKey: "project.myrpg.longDescription",
@@ -74,7 +154,7 @@ export const projectsData: Project[] = [
     status: "finished",
   },
   {
-    id: 2,
+    id: 4,
     title: "Arcade",
     descriptionKey: "project.arcade.description",
     longDescriptionKey: "project.arcade.longDescription",
@@ -143,7 +223,7 @@ export const projectsData: Project[] = [
     status: "finished",
   },
   {
-    id: 3,
+    id: 5,
     title: "Gnu Krell Monitors",
     descriptionKey: "project.gnu_krell_monitors.description",
     longDescriptionKey: "project.gnu_krell_monitors.longDescription",
@@ -183,7 +263,7 @@ export const projectsData: Project[] = [
     status: "finished",
   },
   {
-    id: 4,
+    id: 6,
     title: "42sh",
     descriptionKey: "project.42sh.description",
     longDescriptionKey: "project.42sh.longDescription",
@@ -230,7 +310,7 @@ export const projectsData: Project[] = [
     ],
   },
   {
-    id: 5,
+    id: 7,
     title: "Weserver CPP",
     descriptionKey: "project.weservercpp.description",
     longDescriptionKey: "project.weservercpp.longDescription",
@@ -263,7 +343,7 @@ export const projectsData: Project[] = [
     status: "inProgress",
   },
   {
-    id: 6,
+    id: 8,
     title: "Truth or Dare",
     descriptionKey: "project.truthordare.description",
     longDescriptionKey: "project.truthordare.longDescription",
@@ -328,7 +408,7 @@ export const projectsData: Project[] = [
     status: "inProgress",
   },
   {
-    id: 7,
+    id: 9,
     title: "Multichat",
     descriptionKey: "project.multichat.description",
     longDescriptionKey: "project.multichat.longDescription",
@@ -389,7 +469,7 @@ export const projectsData: Project[] = [
     ],
   },
   {
-    id: 8,
+    id: 10,
     title: "Nduboi.fr",
     descriptionKey: "project.nduboi.description",
     longDescriptionKey: "project.nduboi.longDescription",
